@@ -28,7 +28,7 @@ export default function Home() {
       <h2>Table of Contents</h2>
       <ul>
         <li>
-          <Link href='./'>Code Exposition</Link>
+          <Link href='/code-exposition'>Code Exposition</Link>
         </li>
       </ul>
     </>
