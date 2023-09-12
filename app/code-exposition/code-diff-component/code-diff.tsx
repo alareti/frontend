@@ -1,11 +1,11 @@
 interface EditGraph<T> {
   vertices: EditGraphVertex<T>[][];
-  currentIndex: EditGraphIndex<T>;
+  currentIndex: EditGraphIndex;
   dimension: EditGraphDimension;
 }
 
 type EditGraphVertex<T> = [T, T] | [T] | [];
-type EditGraphIndex<T> = [number, number] | [number] | [];
+type EditGraphIndex = [number, number] | [number] | [];
 
 enum EditGraphDimension {
   D0,
