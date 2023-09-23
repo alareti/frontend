@@ -46,6 +46,9 @@ export default function Index() {
         <li>
           <Link href={"/world-building/choreans"}>The Choreans</Link>
         </li>
+        <li>
+          <Link href={"/world-building/virelians"}>The Virelians</Link>
+        </li>
       </ul>
     </>
   );
