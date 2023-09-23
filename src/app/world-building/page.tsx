@@ -5,20 +5,26 @@ export default function Index() {
     <>
       <h1>World Building</h1>
       <p>
-        The main focus here is to build out the lore of <i>Astralys</i>, the
-        far-away galaxy where the cosmic force known as the Astral Tide, once
-        harmoniously wielded by the ancient Forerunners, now flows chaotically
-        after the cataclysmic Great Astral Shift. This event disrupted the
-        Tide&apos;s balance, introduced new species, and birthed regions of
-        potent anomalies, tech-dominated voids, and fluctuating astral zones.
-        Amidst this intricate landscape, rare Tidebinders harness the
-        Tide&apos;s power, factions seek to unlock the secrets of ancient
-        Technotide Artifacts, and empires clash for galactic dominance, all
-        striving to shape their destinies in a galaxy rich in mystery and
-        conflict.
+        The main focus here is to build out the lore of <i>Astralys</i>, a
+        distant galaxy awash with the cosmic might of the Astral Tide, once
+        seamlessly harnessed by the enigmatic Forerunners. But disaster struck,
+        and the Great Astral Shift ushered in tumultuous changes, toppling the
+        Forerunners&apos; reign and reshaping the galaxy&apos;s tapestry. New
+        species—from the fiery Pyronians to the enduring Dendranss—staked their
+        claims, each infused with distinct aspirations and cultural hues. This
+        shift spawned regions riddled with potent anomalies,
+        technologically-saturated voids, and mercurial astral zones. Amidst this
+        dynamic canvas, elusive Tidebinders wield the Astral Tide&apos;s
+        essence, myriad factions hustle to unravel the secrets of ancient
+        Technotide Artifacts, and sprawling empires grapple for dominion. Every
+        denizen of Astralys, whether ancient or newly introduced, wrestles with
+        their lineage and destiny in a galaxy brimming with enigma and tension.
       </p>
       <h2>Table of Contents</h2>
       <ul>
+        <li>
+          <Link href={"/world-building/overviews"}>Overviews</Link>
+        </li>
         <li>
           <Link href={"/world-building/astral-tide"}>Astral Tide</Link>
         </li>
@@ -26,10 +32,19 @@ export default function Index() {
           <Link href={"/world-building/symphonae"}>The Symphonae</Link>
         </li>
         <li>
-          <Link href={"/world-building/dendran"}>The Dendrans</Link>
+          <Link href={"/world-building/dendrans"}>The Dendrans</Link>
         </li>
         <li>
-          <Link href={"/world-building/aquarid"}>The Aquarids</Link>
+          <Link href={"/world-building/aquarids"}>The Aquarids</Link>
+        </li>
+        <li>
+          <Link href={"/world-building/pyronians"}>The Pyronians</Link>
+        </li>
+        <li>
+          <Link href={"/world-building/moivari"}>The Moivari</Link>
+        </li>
+        <li>
+          <Link href={"/world-building/choreans"}>The Choreans</Link>
         </li>
       </ul>
     </>
