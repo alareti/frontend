@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -25,10 +25,20 @@ export default function Home() {
         code exposition shall be housed in its own category, and is linked below
         in the Table of Contents.
       </p>
+      <p>
+        Another pursuit to be found here is the detailing of a narrative that
+        could be adapted to a video game. It is an exercise in world-building,
+        using AI such as ChatGPT to help with various aspects of the design. It
+        shall be a repository of sorts to help in my efforts to detail an rich
+        and compelling universe where a wide swathe of narratives may flourish.
+      </p>
       <h2>Table of Contents</h2>
       <ul>
         <li>
-          <Link href='./'>Code Exposition</Link>
+          <Link href="./">Code Exposition</Link>
+        </li>
+        <li>
+          <Link href="./world-building">World Building</Link>
         </li>
       </ul>
     </>
