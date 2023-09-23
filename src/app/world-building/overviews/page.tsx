@@ -416,6 +416,63 @@ export default function Index() {
       <br />
       <br />
       <br />
+      <h2>Themes of the Alien Species of Astralys</h2>
+      <ul>
+        <li>
+          <strong>Virelians:</strong> Representing the{" "}
+          <strong>Intellectual and Analytical</strong> side of humanity. They
+          mirror our quest for knowledge, our drive to understand the universe,
+          and our reliance on logic and reason. They also touch upon the balance
+          between spirituality and empiricism, reflecting the age-old debate
+          between faith and science.
+        </li>
+        <li>
+          <strong>Aquarids:</strong> Embodying the{" "}
+          <strong>Adventurous and Navigational</strong> spirit. They reflect
+          humanity&apos;s innate curiosity, our desire to explore the unknown,
+          and our connection to the vastness of the cosmos. They also represent
+          the idea of journeying not just for the destination but for the
+          experience itself.
+        </li>
+        <li>
+          <strong>Pyronians:</strong> Symbolizing{" "}
+          <strong>Passion and Action</strong>. They mirror the fiery side of
+          human nature, our drive to influence, to lead, and to make a mark.
+          They also touch upon the challenges of impulsiveness and the
+          consequences of unchecked ambition.
+        </li>
+        <li>
+          <strong>Dendrans:</strong> Representing{" "}
+          <strong>Patience and Growth</strong>. They reflect the slow, steady
+          progression of time, the value of deep roots, and the wisdom that
+          comes with age. They also symbolize the balance between change and
+          stability.
+        </li>
+        <li>
+          <strong>Symphonae:</strong> Embodying{" "}
+          <strong>Harmony and Unity</strong>. They mirror humanity&apos;s desire
+          for connection, the beauty of collaboration, and the power of shared
+          purpose. They also represent the challenges of individuality within a
+          collective.
+        </li>
+        <li>
+          <strong>Choreans:</strong> Symbolizing{" "}
+          <strong>Expression and Creativity</strong>. They reflect the artistic
+          side of humanity, our need to tell stories, to dance, and to express
+          our emotions. They also touch upon the idea of legacy and the
+          immortality of art.
+        </li>
+        <li>
+          <strong>Moivari:</strong> Representing{" "}
+          <strong>Mystery and Secrecy</strong>. They mirror the enigmatic
+          aspects of human nature, our hidden desires, and the shadows that lurk
+          within. They also represent the power dynamics of knowledge and the
+          consequences of hidden truths.
+        </li>
+      </ul>
+      <br />
+      <br />
+      <br />
     </>
   );
 }

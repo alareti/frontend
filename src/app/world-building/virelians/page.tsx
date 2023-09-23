@@ -486,9 +486,9 @@ export default function Index() {
           inter-species dialogue.
         </li>
         <li>
-          Astralys Explorers: Venturing into the unknown, Virelians could chart
-          unexplored territories, uncover ancient mysteries, and serve as the
-          vanguard of Astralys&apos;s exploration endeavors.
+          Astralys Expeditionary Scholars: Venturing into the unknown, Virelians
+          could chart unexplored territories, uncover ancient mysteries, and
+          serve as the vanguard of Astralys&apos;s research expeditions.
         </li>
         <li>
           Cultural Exchange Programs: To foster understanding and collaboration,
