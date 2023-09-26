@@ -66,6 +66,11 @@ export default function Index() {
         <li>
           <Link href={"/world-building/virelians"}>The Virelians</Link>
         </li>
+        <li>
+          <Link href={"/world-building/galactic-unity-assembly"}>
+            The Galactic Unity Assembly
+          </Link>
+        </li>
       </ul>
     </>
   );
