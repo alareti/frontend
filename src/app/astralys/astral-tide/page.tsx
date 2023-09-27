@@ -7,9 +7,10 @@ export default function Index() {
         The <b>Astral Tide</b>, colloquially known as <b>tide</b>, is an
         all-encompassing energy within a galaxy reminiscent of the setting of
         Star Wars. Originating from ideas found in various works like Arcanum,
-        Star Wars, The Witcher, and Halo, the tide functions much like the Force
-        in Star Wars. Sensitive users, called <b>tidebinders</b>, can harness
-        its powers for supernatural feats, such as telekinesis.
+        Star Wars, The Witcher, and Halo, the tide functions much like the
+        various &quot;magical&quot; systems found in these universes. Sensitive
+        users, called <b>tidebinders</b>, can harness its powers for
+        supernatural feats, such as telekinesis.
       </p>
       <p>
         In the galaxy&apos;s ancient times, only the <b>forerunners</b>, a
@@ -33,9 +34,9 @@ export default function Index() {
         tide presence cause technology to behave unpredictably. Only skilled
         tidebinders, through studying ancient forerunner artifacts, can emulate
         the seamless integration once common, now known as{" "}
-        <b>technotide items</b>. As for the forerunners, post-Shift struggles
-        led them to near-extinction, leaving only a few hidden throughout the
-        galaxy.
+        <b>technotide devices</b>, items, or objects. As for the forerunners,
+        post-Shift struggles led them to near-extinction, leaving only a few
+        hidden throughout the galaxy.
       </p>
       <p>
         The tide is seen not merely as an <b>energy</b> but also as a{" "}
@@ -54,11 +55,11 @@ export default function Index() {
         The tide deeply influences both the mental and physical spheres of
         existence. Emotions both affect the tide and are shaped by it. Powerful
         tidebinders can wield incredible abilities in areas with strong tide
-        presence or even transport its power through Technotide Artifacts like
+        presence or even transport its power through technotide items like
         Astral Batteries
       </p>
       <p>
-        Technotide Artifacts are remnants of the Forerunner era. Some examples
+        Forerunner artifacts are remnants of the Forerunner era. Some examples
         include:
       </p>
       <ul>
@@ -83,7 +84,7 @@ export default function Index() {
         </li>
         <li>
           Astral researchers, though insensitive, could be tide-curious,
-          studying its mysteries and artifacts.
+          studying its mysteries and the production of technotide devices.
         </li>
       </ul>
       <p>
@@ -130,8 +131,9 @@ export default function Index() {
       <p>
         Ancient Forerunner Zones would harken back to the pre-Shift era, where
         tech and tide coexisted seamlessly. These areas might have preserved
-        cities, artifacts, and technotide devices. Though rare, they could act
-        as bastions of knowledge and power for those who discover them.
+        cities or profoundly powerful forerunner artifacts. Though rare, they
+        could act as bastions of knowledge and power for those who discover
+        them.
       </p>
       <p>
         The astral tide&apos;s pervasive nature shapes not only individuals and
@@ -145,12 +147,12 @@ export default function Index() {
       <ul>
         <li>
           Trade Routes: Traders might favor tide voids or stable zones, but the
-          lure of forbidden technotide artifacts might tempt many to risk
+          lure of forbidden forerunner artifacts might tempt many to risk
           fluctuating or high tide areas, leading to specialized professions
           like tide-navigators or tide-smugglers.
         </li>
         <li>
-          Political Power: Regions with control over technotide artifacts or
+          Political Power: Regions with control over forerunner artifacts or
           Forerunner zones could wield significant influence, as these areas
           hold the keys to unlocking the lost knowledge and power of the
           Forerunners.
@@ -183,7 +185,7 @@ export default function Index() {
         <li>
           Tide Festivals: In regions where the tide is celebrated, annual events
           might mark significant astral occurrences, with tidebinders showcasing
-          their skills, and traders exchanging rare artifacts.
+          their skills, and traders exchanging rare technotide items.
         </li>
         <li>
           Research Institutions: Think tanks dedicated to studying the tide,
