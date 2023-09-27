@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Index() {
   return (
     <>
-      <h1>World Building</h1>
+      <h1>Astralys</h1>
       <p>
         The main focus here is to build out the lore of <i>Astralys</i>, a
         distant galaxy awash with the cosmic might of the Astral Tide, once
@@ -21,47 +21,46 @@ export default function Index() {
         their lineage and destiny in a galaxy brimming with enigma and tension.
       </p>
       <p>
-        Astralys is designed to be a &quot;frame universe,&quot; a novel idea
-        born out of the unique characteristics of what makes <i>Astralys</i>{' '}
-        special. A frame universe is a conceptual approach to storytelling that
-        combines the expansive possibilities of a multiverse with the internal
-        coherence and continuity of a singular universe. It allows for a wide
-        array of diverse settings and themes while maintaining an overarching
-        historical narrative and internal logic. Stories within this universe
-        are deeply interconnected, impacting each other and the broader world,
-        yet the core mechanism allowing for this diversity is simple enough for
-        audiences to grasp. The goal is to create a storytelling environment
-        that is both versatile and meaningful, providing a balance of freedom
-        and structure for creators.
+        <i>Astralys</i> is being crafted as a &quot;frame universe.&quot; This
+        approach to world-building seeks to meld the boundless possibilities of
+        a multiverse with the continuity and stability inherent in a singular
+        universe. When brought to fruition, a frame universe would permit a
+        broad spectrum of settings and themes to seamlessly interconnect and
+        simultaneously unify the universe&apos;s historical narrative. This is a
+        universe where vastly diverse stories converge to enrich a broader
+        tapestry while feeling intricately linked and logically consistent. It
+        is a universe where versatility aligns with significance, structural
+        logic bolsters creative freedom, and familiarity sparks intrigue. While
+        the concept is ambitious, the potential rewards are boundless.
       </p>
       <h2>Table of Contents</h2>
       <ul>
         <li>
-          <Link href={'/world-building/overviews'}>Overviews</Link>
+          <Link href={"/world-building/overviews"}>Overviews</Link>
         </li>
         <li>
-          <Link href={'/world-building/frame-universe'}>Frame Universe</Link>
+          <Link href={"/world-building/frame-universe"}>Frame Universe</Link>
         </li>
         <li>
-          <Link href={'/world-building/astral-tide'}>Astral Tide</Link>
+          <Link href={"/world-building/astral-tide"}>Astral Tide</Link>
         </li>
         <li>
-          <Link href={'/world-building/symphonae'}>The Symphonae</Link>
+          <Link href={"/world-building/symphonae"}>The Symphonae</Link>
         </li>
         <li>
-          <Link href={'/world-building/dendrans'}>The Dendrans</Link>
+          <Link href={"/world-building/dendrans"}>The Dendrans</Link>
         </li>
         <li>
-          <Link href={'/world-building/aquarids'}>The Aquarids</Link>
+          <Link href={"/world-building/aquarids"}>The Aquarids</Link>
         </li>
         <li>
-          <Link href={'/world-building/pyronians'}>The Pyronians</Link>
+          <Link href={"/world-building/pyronians"}>The Pyronians</Link>
         </li>
         <li>
-          <Link href={'/world-building/moivari'}>The Moivari</Link>
+          <Link href={"/world-building/moivari"}>The Moivari</Link>
         </li>
         <li>
-          <Link href={'/world-building/choreans'}>The Choreans</Link>
+          <Link href={"/world-building/choreans"}>The Choreans</Link>
         </li>
         <li>
           <Link href={"/world-building/virelians"}>The Virelians</Link>
