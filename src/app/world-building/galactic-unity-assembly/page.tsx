@@ -101,8 +101,10 @@ export default function Index() {
       <ul>
         <li>
           <strong>Description:</strong> Surrounding the Heartland, the Midlands
-          are a mix of developed and wild territories. They experience periodic
-          Tide surges, leading to a dynamic and ever-changing landscape.
+          are a mix of developed and wild territories. Some places experience
+          periodic Tide surges, whereas others have a permanent and significant,
+          but still gentle, Tidal influence, leading to a rich tapestry of
+          interesting and dynamic locales.
         </li>
         <li>
           <strong>Significance:</strong> The Midlands serve as a buffer between
@@ -259,10 +261,10 @@ export default function Index() {
       <h3>Regulations & Oversight</h3>
       <p>
         Understanding the potential risks of melding powerful technology with
-        the unpredictable nature of the Tide, the GUA has set up the Oversight
-        Council. This body formulates guidelines, ensures ethical practices, and
-        monitors technotide experiments, especially those of significant scale
-        or potential consequence.
+        the unpredictable nature of the Tide, the GUA has set up the Tidal
+        Oversight Council (TOC). This body formulates guidelines, ensures
+        ethical practices, and monitors technotide experiments, especially those
+        of significant scale or potential consequence.
       </p>
 
       {/* Innovation Centers */}
@@ -319,13 +321,12 @@ export default function Index() {
       <h3>Frontier Freedom vs. Heartland Regulation</h3>
       <p>
         While the Heartland regions of the GUA are more centralized and adhere
-        strictly to the guidelines set by the Oversight Council, the Frontier
-        regions have a more free-wheeling approach. The vastness and relative
-        isolation of the Frontier allow for experiments and innovations that
-        might be deemed too risky or controversial in the Heartland. This
-        dichotomy often leads to tensions, with Frontier innovators feeling
-        stifled by Heartland bureaucracy and the Heartland wary of unchecked
-        Frontier experiments.
+        strictly to the guidelines set by the TOC, the Frontier regions have a
+        more free-wheeling approach. The vastness and relative isolation of the
+        Frontier allow for experiments and innovations that might be deemed too
+        risky or controversial in the Heartland. This dichotomy often leads to
+        tensions, with Frontier innovators feeling stifled by Heartland
+        bureaucracy and the Heartland wary of unchecked Frontier experiments.
       </p>
 
       {/* Shadows of Tidal Catastrophes */}
@@ -384,6 +385,185 @@ export default function Index() {
         breakthrough innovations, especially in defense, their secretive nature
         breeds rumors, conspiracy theories, and fears about what&rsquo;s truly
         being developed behind their closed doors.
+      </p>
+
+      <h2>Astral Gateways of the Galactic Basin</h2>
+      <h3>Introduction</h3>
+      <p>
+        Astral Gateways are ancient constructs built by the long-gone
+        Forerunners, serving as pivotal nodes for traveling through astrospace
+        (this setting&apos;s version of faster-than-light travel) across the
+        galaxy of Astralys. A significant number of these gateways are
+        strategically located within the Galactic Basin, overseen by the GUA.
+      </p>
+      <h3>Geographic Distribution</h3>
+      <ul>
+        <li>
+          <p>
+            <strong>Frontier Regions</strong>: Several Astral Gateways are
+            scattered throughout the Frontier regions of the Galactic Basin.
+            These gateways often link to star lanes that lead to distant regions
+            of the galaxy, not necessarily bordering the Galactic Basin.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Midlands Regions</strong>: Gateways in the Midlands
+            typically connect to star lanes that lead to regions of the galaxy
+            bordering the Galactic Basin.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Astral Arteries</strong>: All Astral Gateways are situated
+            near or on these major trade and travel routes within the Basin,
+            facilitating safe and efficient travel for non-protected trade
+            ships.
+          </p>
+        </li>
+      </ul>
+      <h3>Functionality</h3>
+      <ul>
+        <li>
+          <p>
+            <strong>Star Lanes</strong>: Each Astral Gateway corresponds to one
+            and only one star lane, providing a relatively safe and efficient
+            two-way route through astral space.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Tidal Concentration</strong>: The distance each
+            gateway&apos;s star lane can cover corresponds to the Tidal
+            concentration in which the gateway is located.
+          </p>
+        </li>
+      </ul>
+      <h3>Strategic Importance</h3>
+      <ul>
+        <li>
+          <p>
+            <strong>Trade and Travel</strong>: The Astral Gateways are vital for
+            intra-galactic trade and travel, making the GUA a significant player
+            in galactic affairs.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Defense</strong>: The GUA is responsible for not only
+            protecting the source gateways within the Basin but also their
+            corresponding destination gateways scattered throughout the galaxy.
+            These are almost exclusively in other governments&apos;
+            jurisdictions, necessitating diplomatic, political, and sometimes
+            aggressive maneuvering.
+          </p>
+        </li>
+      </ul>
+      <h3>Historical Significance</h3>
+      <ul>
+        <li>
+          <p>
+            <strong>Forerunner Legacy</strong>: These gateways are remnants of a
+            bygone era, built by the Forerunners as part of a grand experiment
+            or perhaps a last-ditch effort to salvage their civilization after
+            the Great Astral Shift disrupted the Tide.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Custodianship</strong>: The GUA, as the steward of the
+            Galactic Basin, carries the additional responsibility of preserving
+            these ancient artifacts, adding another layer of complexity to their
+            role.
+          </p>
+        </li>
+      </ul>
+      <p>
+        The Astral Gateways are not just infrastructural assets but also carry
+        immense historical and cultural significance, making them a focal point
+        in the GUA&apos;s governance and strategy.
+      </p>
+
+      <h2>Branches of Government</h2>
+      <h3>United Cabinet</h3>
+      <ul>
+        <li>
+          <strong>Composition</strong>: Comprised of one representative leader
+          from each of the major species or cultures within the GUA.
+        </li>
+        <li>
+          <strong>Term</strong>: Members are re-elected every five years by
+          their respective cultures or species, with staggered elections every
+          year.
+        </li>
+        <li>
+          <strong>Presidency</strong>: The office of the president is decided by
+          a vote among the newly elected cabinet members. Each member gets two
+          votes, and the plurality vote wins.
+        </li>
+        <li>
+          <strong>Functions</strong>: Acts as the key decision-making body,
+          holding veto powers over legislation passed by the Interstellar
+          Assembly. It sets the strategic direction and priorities of the GUA.
+        </li>
+      </ul>
+      <h3>Interstellar Assembly</h3>
+      <ul>
+        <li>
+          <strong>Composition</strong>: Uses a dynamic delegate allotment system
+          where every star system sends a minimum of three delegates. Additional
+          delegates are allowed based on population tiers.
+        </li>
+        <li>
+          <strong>Election</strong>: Delegates are autonomously chosen by their
+          respective star systems.
+        </li>
+        <li>
+          <strong>Functions</strong>: Serves as the main legislative body,
+          deliberating and passing laws, budgets, and other important
+          resolutions. Its decisions can be overridden by the United
+          Cabinet&apos;s veto powers.
+        </li>
+      </ul>
+      <h3>Astral Court</h3>
+      <ul>
+        <li>
+          <strong>Size</strong>: Consists of a number of Astral Judges
+          determined by the formula: the nearest prime number less than or equal
+          to five times the number of members in the United Cabinet. This
+          currently stands at 37, representing the 8 species of Astralys.
+        </li>
+        <li>
+          <strong>Composition</strong>: Includes individuals with the deepest
+          ties to the Tide from across the GUA&apos;s territories, which could
+          range from Moivari Visionaries to Pyronian Master Artificers, or from
+          Dendran wise-folk to Human Tidebinders.
+        </li>
+        <li>
+          <strong>Nomination</strong>: A complex process involving both the
+          United Cabinet and the Interstellar Assembly, aimed at selecting the
+          most Tidally-renowned individuals, regardless of their species or
+          culture.
+        </li>
+        <li>
+          <strong>Functions</strong>: Acts as the top judicial body, overseeing
+          the most critical and complex issues, especially those concerning the
+          Tide and Technotide artifacts. It also serves as a guardian of ancient
+          rituals, traditions, and ceremonies associated with the Tide.
+        </li>
+        <li>
+          <strong>Tenure</strong>: Members serve for a fixed term, which could
+          be extended to reflect the long lifespans and deep wisdom associated
+          with the role.
+        </li>
+      </ul>
+      <p>
+        The GUA&apos;s governance structure aims to balance the complexities of
+        species representation, population dynamics, and Tidal expertise. The
+        United Cabinet focuses on species-level representation, the Interstellar
+        Assembly on population dynamics, and the Astral Court on Tidal wisdom
+        and expertise. This triad forms the backbone of the GUA&apos;s efforts
+        to create an inclusive, fair, and just society.
       </p>
     </>
   );
