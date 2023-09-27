@@ -340,79 +340,60 @@ export default function Index() {
       <br />
       <br />
       <br />
-      <h2>Dendrans Overview</h2>
-      <h3>Philosophy:</h3>
-      <p>
-        Guided by the concept of the Astral Tree, Dendrans value
-        interconnectedness, balance, and the journey from humble beginnings to
-        enlightened maturity.
-      </p>
-      <h3>Appearance:</h3>
-      <p>
-        Tree-like beings, their bodies meld bark, branches, and leaves,
-        mirroring mythical Ents.
-      </p>
-      <h3>Culture:</h3>
-      <p>
-        Dendran tribes thrive in wisdom-rich forests, transitioning from
-        protected saplings to independent adults through significant rites.
-      </p>
-      <h3>Adulthood Ritual:</h3>
-      <p>
-        Youths explore high Tide areas, seeking enlightenment, and then root
-        themselves as mature individuals on their return.
-      </p>
-      <h3>Habitat:</h3>
-      <p>
-        Nature-integrated settlements with essential amenities, including
-        ecologically harmonious spaceports.
-      </p>
-      <h3>Technology:</h3>
-      <p>
-        Durable and nature-inspired, Dendrans craft robust spaceships and lean
-        towards ballistic armaments, while remaining vigilant against ethereal
-        threats.
-      </p>
-      <h3>Astral Tree&apos;s Essence:</h3>
-      <p>
-        They interpret low Tide as foundational stability and high Tide as a
-        realm of growth and learning.
-      </p>
-      <h3>Galactic Role:</h3>
-      <p>
-        Renowned for their wisdom, Dendrans often mediate conflicts and impart
-        long-earned knowledge.
-      </p>
-      <h3>Conflict Approach:</h3>
-      <p>
-        Believers in dialogue and strategic defense, they aim for resolutions
-        that uphold nature&apos;s balance.
-      </p>
-      <h3>Interstellar Exchange:</h3>
-      <p>
-        As botany experts, they trade unique resources and serve as sought-after
-        counselors in galactic affairs.
-      </p>
-      <h3>Legacy Preservation:</h3>
-      <p>
-        They venerate Astralys&apos;s ancient narratives, safeguarding
-        historical landmarks and artifacts.
-      </p>
-      <h3>Human Relations:</h3>
-      <p>
-        Observing humanity with curious caution, Dendrans envision joint
-        ventures, especially in environmental conservation.
-      </p>
-      <h3>Threats:</h3>
-      <p>
-        Ecological upheavals and foreign pathogens are their primary concerns,
-        and their extended lives might make swift adaptations challenging.
-      </p>
-      <h3>Wisdom:</h3>
-      <p>
-        With a cyclical perspective on existence, they comprehend time, life
-        cycles, and reincarnation in a unique light.
-      </p>
+      <h2>Themes of the Alien Species of Astralys</h2>
+      <ul>
+        <li>
+          <strong>Virelians:</strong> Representing the{' '}
+          <strong>Intellectual and Analytical</strong> side of humanity. They
+          mirror our quest for knowledge, our drive to understand the universe,
+          and our reliance on logic and reason. They also touch upon the balance
+          between spirituality and empiricism, reflecting the age-old debate
+          between faith and science.
+        </li>
+        <li>
+          <strong>Aquarids:</strong> Embodying the{' '}
+          <strong>Adventurous and Navigational</strong> spirit. They reflect
+          humanity&apos;s innate curiosity, our desire to explore the unknown,
+          and our connection to the vastness of the cosmos. They also represent
+          the idea of journeying not just for the destination but for the
+          experience itself.
+        </li>
+        <li>
+          <strong>Pyronians:</strong> Symbolizing{' '}
+          <strong>Passion and Action</strong>. They mirror the fiery side of
+          human nature, our drive to influence, to lead, and to make a mark.
+          They also touch upon the challenges of impulsiveness and the
+          consequences of unchecked ambition.
+        </li>
+        <li>
+          <strong>Dendrans:</strong> Representing{' '}
+          <strong>Patience and Growth</strong>. They reflect the slow, steady
+          progression of time, the value of deep roots, and the wisdom that
+          comes with age. They also symbolize the balance between change and
+          stability.
+        </li>
+        <li>
+          <strong>Symphonae:</strong> Embodying{' '}
+          <strong>Harmony and Unity</strong>. They mirror humanity&apos;s desire
+          for connection, the beauty of collaboration, and the power of shared
+          purpose. They also represent the challenges of individuality within a
+          collective.
+        </li>
+        <li>
+          <strong>Choreans:</strong> Symbolizing{' '}
+          <strong>Expression and Creativity</strong>. They reflect the artistic
+          side of humanity, our need to tell stories, to dance, and to express
+          our emotions. They also touch upon the idea of legacy and the
+          immortality of art.
+        </li>
+        <li>
+          <strong>Moivari:</strong> Representing{' '}
+          <strong>Mystery and Secrecy</strong>. They mirror the enigmatic
+          aspects of human nature, our hidden desires, and the shadows that lurk
+          within. They also represent the power dynamics of knowledge and the
+          consequences of hidden truths.
+        </li>
+      </ul>
       <br />
       <br />
       <br />
