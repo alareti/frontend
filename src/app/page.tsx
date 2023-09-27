@@ -26,11 +26,12 @@ export default function Home() {
         in the Table of Contents.
       </p>
       <p>
-        Another pursuit to be found here is the detailing of a narrative that
-        could be adapted to a video game. It is an exercise in world-building,
-        using AI such as ChatGPT to help with various aspects of the design. It
-        shall be a repository of sorts to help in my efforts to detail an rich
-        and compelling universe where a wide swathe of narratives may flourish.
+        Another pursuit to be found here is the detailing of a &quot;frame
+        universe&quot; entitled <i>Astralys</i>. It is an exercise in
+        world-building, using AI such as ChatGPT to help with various aspects of
+        the design. It shall be a repository of sorts to help in my efforts to
+        detail an rich and compelling universe where a wide swathe of narratives
+        may flourish.
       </p>
       <h2>Table of Contents</h2>
       <ul>
@@ -38,7 +39,7 @@ export default function Home() {
           <Link href="./">Code Exposition</Link>
         </li>
         <li>
-          <Link href="./world-building">World Building</Link>
+          <Link href="./astralys">Astralys</Link>
         </li>
       </ul>
     </>
