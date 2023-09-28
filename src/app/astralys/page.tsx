@@ -68,8 +68,8 @@ export default function Index() {
           <Link href={"/astralys/virelians"}>The Virelians</Link>
         </li>
         <li>
-          <Link href={"/astralys/galactic-unity-assembly"}>
-            The Galactic Unity Assembly
+          <Link href={"/astralys/galactic-basin-coalition"}>
+            The Galactic Basin Coalition
           </Link>
         </li>
       </ul>
