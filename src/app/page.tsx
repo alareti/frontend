@@ -33,6 +33,10 @@ export default function Home() {
         detail an rich and compelling universe where a wide swathe of narratives
         may flourish.
       </p>
+      <p>
+        There will also be game demos here to help flesh out various ideas I
+        have with trying to bring <i>Astralys</i> to life.
+      </p>
       <h2>Table of Contents</h2>
       <ul>
         <li>
@@ -40,6 +44,9 @@ export default function Home() {
         </li>
         <li>
           <Link href="./astralys">Astralys</Link>
+        </li>
+        <li>
+          <Link href="./game-demos">Game Demos</Link>
         </li>
       </ul>
     </>
