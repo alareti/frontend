@@ -1,3 +1,7 @@
+"use client";
+
+import { PointerEvent } from "react";
+
 function joystickSvg(radiusPixels: number, strokeStrength: number) {
   const r = radiusPixels;
   const diag = 0.5 * Math.SQRT2 * r;
@@ -23,9 +27,9 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
           return (
             <path
               d={d}
-              stroke='black'
+              stroke="black"
               strokeWidth={strokeStrength}
-              fill='green'
+              fill="green"
               fillOpacity={0.5}
             ></path>
           );
@@ -34,9 +38,9 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
           return (
             <path
               d={d}
-              stroke='black'
+              stroke="black"
               strokeWidth={strokeStrength}
-              fill='red'
+              fill="red"
               fillOpacity={0.5}
             ></path>
           );
@@ -45,9 +49,9 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
           return (
             <path
               d={d}
-              stroke='black'
+              stroke="black"
               strokeWidth={strokeStrength}
-              fill='blue'
+              fill="blue"
               fillOpacity={0.5}
             ></path>
           );
@@ -56,9 +60,9 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
           return (
             <path
               d={d}
-              stroke='black'
+              stroke="black"
               strokeWidth={strokeStrength}
-              fill='yellow'
+              fill="yellow"
               fillOpacity={0.5}
             ></path>
           );
@@ -66,10 +70,10 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
         default: {
           return (
             <path
-              d={''}
-              stroke='transparent'
+              d={""}
+              stroke="transparent"
               strokeWidth={strokeStrength}
-              fill='transparent'
+              fill="transparent"
             ></path>
           );
         }
@@ -82,7 +86,7 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
       width={4 * r}
       height={4 * r}
       viewBox={`${-2 * r} ${-2 * r} ${4 * r} ${4 * r}`}
-      xmlns='http://www.w3.org/2000/svg'
+      xmlns="http://www.w3.org/2000/svg"
     >
       {paths}
     </svg>
@@ -90,5 +94,37 @@ function joystickSvg(radiusPixels: number, strokeStrength: number) {
 }
 
 export default function Index() {
-  return <>{joystickSvg(80, 2)}</>;
+  const handlePointerDown = (e: PointerEvent<SVGSVGElement>) => {
+    e.preventDefault();
+    console.log(e);
+    e.currentTarget.style.fill = "red";
+  };
+  const handlePointerUp = (e: PointerEvent<SVGSVGElement>) => {
+    e.preventDefault();
+    e.currentTarget.style.fill = "lightblue";
+  };
+
+  return (
+    <>
+      <br />
+      <svg
+        width="300"
+        height="300"
+        xmlns="http://www.w3.org/2000/svg"
+        className="border-2 border-black mx-auto"
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+      >
+        {/* <circle
+          cx="100"
+          cy="100"
+          r="50"
+          fill="lightblue"
+          cursor="pointer"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+        /> */}
+      </svg>
+    </>
+  );
 }
