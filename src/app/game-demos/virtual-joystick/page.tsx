@@ -1,130 +1,67 @@
-"use client";
+'use client';
 
-import { PointerEvent } from "react";
+import { useRef, useMemo, PointerEvent, useEffect, useState } from 'react';
 
-function joystickSvg(radiusPixels: number, strokeStrength: number) {
-  const r = radiusPixels;
-  const diag = 0.5 * Math.SQRT2 * r;
-  const corners = [
-    [diag, diag],
-    [-diag, diag],
-    [-diag, -diag],
-    [diag, -diag],
-  ];
-
-  const paths = corners
-    .map((xy, i, corners) => {
-      const xyNext = corners[(i + 1) % corners.length];
-      const x0 = xy[0];
-      const y0 = xy[1];
-      const x1 = xyNext[0];
-      const y1 = xyNext[1];
-      return `M 0 0 L ${x0} ${y0} A ${r} ${r} 0 0 1 ${x1} ${y1} Z`;
-    })
-    .map((d, i) => {
-      switch (i) {
-        case 0: {
-          return (
-            <path
-              d={d}
-              stroke="black"
-              strokeWidth={strokeStrength}
-              fill="green"
-              fillOpacity={0.5}
-            ></path>
-          );
-        }
-        case 1: {
-          return (
-            <path
-              d={d}
-              stroke="black"
-              strokeWidth={strokeStrength}
-              fill="red"
-              fillOpacity={0.5}
-            ></path>
-          );
-        }
-        case 2: {
-          return (
-            <path
-              d={d}
-              stroke="black"
-              strokeWidth={strokeStrength}
-              fill="blue"
-              fillOpacity={0.5}
-            ></path>
-          );
-        }
-        case 3: {
-          return (
-            <path
-              d={d}
-              stroke="black"
-              strokeWidth={strokeStrength}
-              fill="yellow"
-              fillOpacity={0.5}
-            ></path>
-          );
-        }
-        default: {
-          return (
-            <path
-              d={""}
-              stroke="transparent"
-              strokeWidth={strokeStrength}
-              fill="transparent"
-            ></path>
-          );
-        }
-      }
-    });
-  console.log(paths);
-
-  return (
-    <svg
-      width={4 * r}
-      height={4 * r}
-      viewBox={`${-2 * r} ${-2 * r} ${4 * r} ${4 * r}`}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {paths}
-    </svg>
-  );
+interface Rect {
+  x0: number;
+  y0: number;
+  width: number;
+  height: number;
 }
 
 export default function Index() {
-  const handlePointerDown = (e: PointerEvent<SVGSVGElement>) => {
-    e.preventDefault();
-    console.log(e);
-    e.currentTarget.style.fill = "red";
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const contextRef = useRef<CanvasRenderingContext2D | null>(null);
+  const canvasDim = useMemo(() => {
+    return {
+      x: 250,
+      y: 500,
+    };
+  }, []);
+
+  const pointerHandler = (event: PointerEvent<HTMLCanvasElement>) => {
+    console.log(event);
   };
-  const handlePointerUp = (e: PointerEvent<SVGSVGElement>) => {
-    e.preventDefault();
-    e.currentTarget.style.fill = "lightblue";
+
+  const pointerHandlerButton = (event: PointerEvent<HTMLDivElement>) => {
+    // event.preventDefault();
+    console.log(event);
   };
+
+  useEffect(() => {
+    if (!canvasRef.current) return () => {};
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    if (!context) return () => {};
+    contextRef.current = context;
+
+    return () => {
+      context.reset();
+    };
+  }, [canvasDim]);
 
   return (
     <>
-      <br />
-      <svg
-        width="300"
-        height="300"
-        xmlns="http://www.w3.org/2000/svg"
-        className="border-2 border-black mx-auto"
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
-      >
-        {/* <circle
-          cx="100"
-          cy="100"
-          r="50"
-          fill="lightblue"
-          cursor="pointer"
-          onPointerDown={handlePointerDown}
-          onPointerUp={handlePointerUp}
-        /> */}
-      </svg>
+      <div className='border-2 border-green-400 w-screen h-96 relative'>
+        <canvas
+          className='touch-none w-full h-full absolute border-2 border-purple-500 bg-slate-600'
+          ref={canvasRef}
+
+          // onPointerDown={pointerHandler}
+          // onPointerUp={pointerHandler}
+          // onPointerMove={pointerHandler}
+          // onPointerLeave={pointerHandler}
+          // width={canvasDim.x}
+          // height={canvasDim.y}
+        ></canvas>
+        <div
+          className='touch-none w-2/5 h-1/3 absolute bottom-0 border-2 border-black bg-white'
+          onPointerDown={pointerHandlerButton}
+          onPointerUp={pointerHandlerButton}
+          onPointerMove={pointerHandlerButton}
+          onPointerLeave={pointerHandlerButton}
+        ></div>
+      </div>
     </>
   );
 }
