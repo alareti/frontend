@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from 'react';
+import { EnumType } from 'typescript';
 
 function inRange(x: number | number[], a: number, b: number): boolean {
   if (Array.isArray(x)) {
@@ -28,7 +29,7 @@ function GridSVG({ position }: { position: [number, number] }) {
         y1={0}
         x2={x}
         y2={numPixels}
-        stroke="lightblue"
+        stroke='lightblue'
         strokeWidth={1}
       />
     );
@@ -43,7 +44,7 @@ function GridSVG({ position }: { position: [number, number] }) {
         y1={y}
         x2={numPixels}
         y2={y}
-        stroke="lightblue"
+        stroke='lightblue'
         strokeWidth={1}
       />
     );
@@ -57,7 +58,7 @@ function GridSVG({ position }: { position: [number, number] }) {
         y={position[1] * pixelsPerCell}
         width={pixelsPerCell}
         height={pixelsPerCell}
-        fill="black"
+        fill='black'
       ></rect>
     );
   }
@@ -67,7 +68,7 @@ function GridSVG({ position }: { position: [number, number] }) {
       width={numPixels}
       height={numPixels}
       viewBox={`0 0 ${numPixels} ${numPixels}`}
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns='http://www.w3.org/2000/svg'
     >
       {verticalLines}
       {horizontalLines}
@@ -76,8 +77,60 @@ function GridSVG({ position }: { position: [number, number] }) {
   );
 }
 
+enum Control {
+  MoveUp = 'MoveUp',
+  MoveLeft = 'MoveLeft',
+  MoveDown = 'MoveDown',
+  MoveRight = 'MoveRight',
+}
+
+enum KeyBinding {
+  KeyW = 'KeyW',
+  KeyA = 'KeyA',
+  KeyS = 'KeyS',
+  KeyD = 'KeyD',
+}
+
+function bindingFromEvent(event: KeyboardEvent) {
+  for (let binding in KeyBinding) {
+    if (event.code == binding) {
+      return binding as KeyBinding;
+    }
+  }
+  return null;
+}
+
+function defaultKeyBindingMap() {
+  const bindingMap = new Map<Control, KeyBinding>();
+  bindingMap.set(Control.MoveUp, KeyBinding.KeyW);
+  bindingMap.set(Control.MoveLeft, KeyBinding.KeyA);
+  bindingMap.set(Control.MoveDown, KeyBinding.KeyS);
+  bindingMap.set(Control.MoveRight, KeyBinding.KeyD);
+  return bindingMap;
+}
+
 export default function Index() {
   const [xy, setXY] = useState<[number, number]>([3, 1]);
+  const [keyBindings, setKeyBindings] = useState(defaultKeyBindingMap());
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (bindingFromEvent(e)) {
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown, true);
+    document.addEventListener('keyup', handleKeyUp, true);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown, true);
+      document.removeEventListener('keyup', handleKeyUp, true);
+    };
+  }, [keyBindings]);
+
+  const handleKeyUp = (e: KeyboardEvent) => {
+    console.log(e);
+  };
 
   return (
     <>

@@ -13,6 +13,7 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you wish to connect from an android mobile device, run `adb reverse tcp:3000 tcp:3000` from your PC's command line. Then open the above link from your mobile device.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Index() {
   return (
@@ -49,7 +49,10 @@ export default function Index() {
       <h2>List of Demos</h2>
       <ul>
         <li>
-          <Link href={"game-demos/grid-movement"}>Grid Movement</Link>
+          <Link href={'game-demos/grid-movement'}>Grid Movement</Link>
+        </li>
+        <li>
+          <Link href={'game-demos/virtual-joystick'}>Virtual Joystick</Link>
         </li>
       </ul>
     </>
