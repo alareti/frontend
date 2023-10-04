@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useRef, PointerEvent, useEffect, useState } from 'react';
+import { useRef, PointerEvent, useEffect, useState } from "react";
 
 // interface Rect {
 //   x0: number;
@@ -26,7 +26,7 @@ export default function Index() {
     if (!canvasRef.current) return () => {};
     const canvas = canvasRef.current;
 
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     if (!context) return () => {};
     setCanvasContext(context);
 
@@ -54,19 +54,20 @@ export default function Index() {
   return (
     <>
       <div
-        className='border-2 border-green-400 w-[100dvw] h-[100dvh] relative'
+        className="relative h-[100dvh] w-[100dvw] touch-none"
         onPointerDown={pointerHandler}
         onPointerUp={pointerHandler}
         // onPointerMove={pointerHandler}
         onPointerLeave={pointerHandler}
       >
-        <canvas
-          className='w-full h-full absolute border-2 border-purple-500 bg-slate-600'
-          ref={canvasRef}
-        ></canvas>
+        <canvas className="absolute h-full w-full" ref={canvasRef}></canvas>
         <button
-          className='w-1/2 h-1/4 absolute bottom-0 border-2 border-black bg-white'
-          type='button'
+          className="absolute bottom-0 h-1/4 w-1/2 border-2 border-red-400 bg-white"
+          type="button"
+        ></button>
+        <button
+          className="absolute bottom-0 right-0 h-1/4 w-1/2 border-2 border-green-400 bg-slate-300"
+          type="button"
         ></button>
       </div>
     </>
