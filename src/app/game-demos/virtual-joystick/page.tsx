@@ -62,11 +62,11 @@ export default function Index() {
       >
         <canvas className="absolute h-full w-full" ref={canvasRef}></canvas>
         <button
-          className="absolute bottom-0 h-1/4 w-1/2 border-2 border-red-400 bg-white"
+          className="absolute bottom-0 h-1/4 w-1/2 bg-slate-400"
           type="button"
         ></button>
         <button
-          className="absolute bottom-0 right-0 h-1/4 w-1/2 border-2 border-green-400 bg-slate-300"
+          className="absolute bottom-0 right-0 h-1/4 w-1/2 bg-slate-300"
           type="button"
         ></button>
       </div>
