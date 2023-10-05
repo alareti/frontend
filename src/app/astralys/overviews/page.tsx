@@ -4,8 +4,12 @@ export default function Index() {
       <h1>Overviews of Astralys</h1>
       <h2>Astralys Overview</h2>
       <p>
-        A sprawling universe where the mysterious Astral Tide dictates the ebb
-        and flow of fate, emotions, and the very fabric of reality.
+        <i>Astralys</i> is a sprawling universe where the mysterious Astral Tide
+        dictates the ebb and flow of fate, emotions, and the very fabric of
+        reality. The genre can be described as &quot;Science Fantasy Space Opera
+        with Sociopolitical, Archaeological, and Philosophical Themes,&quot; or
+        alternatively, &quot;Astronomyth Fiction.&quot; It is set in a far-away
+        galaxy eponymously named &quot;Astralys.&quot;
       </p>
 
       <h3>Core Concepts</h3>
@@ -343,7 +347,7 @@ export default function Index() {
       <h2>Themes of the Alien Species of Astralys</h2>
       <ul>
         <li>
-          <strong>Virelians:</strong> Representing the{' '}
+          <strong>Virelians:</strong> Representing the{" "}
           <strong>Intellectual and Analytical</strong> side of humanity. They
           mirror our quest for knowledge, our drive to understand the universe,
           and our reliance on logic and reason. They also touch upon the balance
@@ -351,7 +355,7 @@ export default function Index() {
           between faith and science.
         </li>
         <li>
-          <strong>Aquarids:</strong> Embodying the{' '}
+          <strong>Aquarids:</strong> Embodying the{" "}
           <strong>Adventurous and Navigational</strong> spirit. They reflect
           humanity&apos;s innate curiosity, our desire to explore the unknown,
           and our connection to the vastness of the cosmos. They also represent
@@ -359,35 +363,35 @@ export default function Index() {
           experience itself.
         </li>
         <li>
-          <strong>Pyronians:</strong> Symbolizing{' '}
+          <strong>Pyronians:</strong> Symbolizing{" "}
           <strong>Passion and Action</strong>. They mirror the fiery side of
           human nature, our drive to influence, to lead, and to make a mark.
           They also touch upon the challenges of impulsiveness and the
           consequences of unchecked ambition.
         </li>
         <li>
-          <strong>Dendrans:</strong> Representing{' '}
+          <strong>Dendrans:</strong> Representing{" "}
           <strong>Patience and Growth</strong>. They reflect the slow, steady
           progression of time, the value of deep roots, and the wisdom that
           comes with age. They also symbolize the balance between change and
           stability.
         </li>
         <li>
-          <strong>Symphonae:</strong> Embodying{' '}
+          <strong>Symphonae:</strong> Embodying{" "}
           <strong>Harmony and Unity</strong>. They mirror humanity&apos;s desire
           for connection, the beauty of collaboration, and the power of shared
           purpose. They also represent the challenges of individuality within a
           collective.
         </li>
         <li>
-          <strong>Choreans:</strong> Symbolizing{' '}
+          <strong>Choreans:</strong> Symbolizing{" "}
           <strong>Expression and Creativity</strong>. They reflect the artistic
           side of humanity, our need to tell stories, to dance, and to express
           our emotions. They also touch upon the idea of legacy and the
           immortality of art.
         </li>
         <li>
-          <strong>Moivari:</strong> Representing{' '}
+          <strong>Moivari:</strong> Representing{" "}
           <strong>Mystery and Secrecy</strong>. They mirror the enigmatic
           aspects of human nature, our hidden desires, and the shadows that lurk
           within. They also represent the power dynamics of knowledge and the
