@@ -19,7 +19,7 @@ export default function Home() {
           stumble upon it. As you navigate through, feel free to explore content
           that piques your interest, and kindly overlook any disarray
           encountered along the way. Below you&apos;ll find a listing of various
-          pursuits found here, as well as some more information regarding its
+          pursuits found here, as well as some more information regarding the
           site and myself. Happy exploring!
         </p>
         {/* <p className="my-2">
@@ -60,12 +60,13 @@ export default function Home() {
           various graphics and UI/UX tools, especially with regards to games
           utilizing the power of the browser. I think with the advent of
           technologies like WebGPU and Progressive Web Apps, there will be a
-          renaissance of web-based easy-to-share, access, and play games that
-          don&apos;t compromise on performance or fidelity.
+          renaissance of easy-to-share, access, and play web-based games that
+          don&apos;t compromise on performance or fidelity. And as such, the
+          content here will be oriented towards such technologies.
         </p>
 
         <h2 className="my-6 text-2xl font-bold">Frequently Asked Questions</h2>
-        <ul>
+        <ul className="my-6">
           <li className="my-6">
             <h3 className="my-2 text-xl">
               <i>What does &quot;Alareti&quot; even mean?</i>
@@ -92,10 +93,11 @@ export default function Home() {
             </h3>
             <p>
               My name is <strong>Davin</strong>. I&apos;m an electrical engineer
-              with a strong habit of dabbling. It manifests itself in a variety
-              of ways, but to list a few, it tends to oscillate around music,
-              video games, world-building, sports, programming, electronics,
-              math, and books.
+              that tends to dabble in things that interests me. This dabbling
+              spirit manifests itself in a variety of ways, but to list a few,
+              it tends to oscillate around music, video games, world-building,
+              sports, programming, electronics, math, and books. If you wish to
+              contact me, davin.alareti@gmail.com is my email address.
             </p>
           </li>
         </ul>
