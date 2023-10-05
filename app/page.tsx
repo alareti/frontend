@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       <h2>Table of Contents</h2>
       <ul>
         <li>
-          <Link href='/code-exposition'>Code Exposition</Link>
+          <Link href="/code-exposition">Code Exposition</Link>
         </li>
       </ul>
     </>
