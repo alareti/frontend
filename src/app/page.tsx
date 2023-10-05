@@ -10,7 +10,7 @@ export default function Home() {
             <p className="mt-2 text-gray-400">
               The trove of a dabbler&apos;s fascinations
             </p>
-            <hr className="mt-1 w-1/12" />
+            <hr className="mt-1 w-20" />
           </hgroup>
           <p className="my-2">
             Welcome! This space serves as the archive for various experimental
