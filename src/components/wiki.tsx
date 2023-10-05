@@ -60,7 +60,7 @@ export function SubH({
   const nestedLevel = useContext(NestedLevelContext);
 
   const mainPageSubtext = mainPage ? (
-    <p className="ml-8 text-base font-normal text-neutral-400">
+    <p className="ml-8 text-neutral-400">
       <i>
         Main Page: <A href={mainPage}>{children}</A>
       </i>
@@ -72,34 +72,34 @@ export function SubH({
   switch (nestedLevel) {
     case 1: {
       return (
-        <h2 className="mb-4 mt-6 text-2xl font-bold">
-          {children}
+        <hgroup className="mb-4 mt-6">
+          <h2 className="text-2xl font-bold">{children}</h2>
           {mainPageSubtext}
-        </h2>
+        </hgroup>
       );
     }
     case 2: {
       return (
-        <h3 className="mb-2 mt-4 text-xl font-bold">
-          {children}
+        <hgroup className="mb-2 mt-4">
+          <h3 className="text-xl font-bold">{children}</h3>
           {mainPageSubtext}
-        </h3>
+        </hgroup>
       );
     }
     case 3: {
       return (
-        <h4 className="mb-1 mt-2 text-lg font-bold">
-          {children}
+        <hgroup className="mb-1 mt-2">
+          <h4 className="text-lg font-bold">{children}</h4>
           {mainPageSubtext}
-        </h4>
+        </hgroup>
       );
     }
     case 4: {
       return (
-        <h5 className="mb-0.5 mt-1 text-lg font-semibold">
-          {children}
+        <hgroup className="mb-0.5 mt-1">
+          <h5 className="text-lg font-semibold">{children}</h5>
           {mainPageSubtext}
-        </h5>
+        </hgroup>
       );
     }
     default: {
