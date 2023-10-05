@@ -87,8 +87,8 @@ export default function Index() {
               <Wiki.A href={"/astralys/virelians"}>The Virelians</Wiki.A>
             </li>
             <li>
-              <Wiki.A href={"/astralys/galactic-unity-assembly"}>
-                The Galactic Unity Assembly
+              <Wiki.A href={"/astralys/galactic-basin-coalition"}>
+                The Galactic Basin Coalition
               </Wiki.A>
             </li>
           </ul>
