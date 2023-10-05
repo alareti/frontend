@@ -1,18 +1,16 @@
-import Link from "next/link";
+"use client";
 
-export default function Home() {
+import * as Wiki from "../components/wiki";
+
+export default function Index() {
   return (
-    <>
-      <div className="flex justify-center">
-        <article className="mx-7 my-6 max-w-3xl">
-          <hgroup className="my-4">
-            <h1 className="font-serif text-5xl font-medium">Alareti</h1>
-            <p className="mt-2 text-gray-400">
-              The trove of a dabbler&apos;s fascinations
-            </p>
-            <hr className="mt-1 w-20" />
-          </hgroup>
-          <p className="my-2">
+    <div className="flex justify-center bg-neutral-50">
+      <Wiki.Article>
+        <Wiki.H subtitle="The trove of a dabbler's fascinations">
+          Alareti
+        </Wiki.H>
+        <Wiki.Section>
+          <Wiki.P>
             Welcome! This space serves as the archive for various experimental
             projects and half-baked ideas of mine. While it may not currently
             win accolades for beauty, I hope that with time and nurturing it
@@ -22,91 +20,76 @@ export default function Home() {
             encountered along the way. Below you&apos;ll find a listing of
             various pursuits found here, as well as some more information
             regarding the site and myself. Happy exploring!
-          </p>
-          {/* <p className="my-2">
-              A large portion of this site is dedicated to the exposition of code,
-              and as such, shall need to develop some tools to help with this
-              effort. I also plan to create an article which explains the philosophy
-              on the centrality of code exposition to learning one&apos;s way around
-              a new tool or codebase. The fruits of these efforts to develop my
-              approach to code exposition shall be housed in its own category, and
-              is linked below in the Table of Contents.
-            </p> */}
+          </Wiki.P>
+        </Wiki.Section>
 
-          <h2 className="my-6 text-2xl font-bold">
+        <Wiki.Section>
+          <Wiki.SubH mainPage={"/astralys"}>
             <i>Astralys</i>
-          </h2>
-          <p className="my-2">
-            A pursuit found here is the detailing of a &quot;
-            <Link href={"/astralys/frame-universe"} className="text-sky-600">
-              frame universe
-            </Link>
-            &quot; entitled{" "}
-            <Link href={"/astralys"} className="text-sky-600">
-              <i>Astralys</i>
-            </Link>
-            . It is an exercise in world-building, using AI such as ChatGPT to
-            help with various aspects of the design. It shall be a repository of
-            sorts to help in my efforts to detail an rich and compelling
-            universe where a wide swathe of narratives may flourish.
-          </p>
+          </Wiki.SubH>
+          <Wiki.P>
+            The pursuit found here is the detailing of a &quot;
+            <Wiki.A href={"/astralys/frame-universe"}>frame universe</Wiki.A>
+            &quot; entitled <i>Astralys</i>. It is an exercise in
+            world-building, using AI such as ChatGPT to help with various
+            aspects of the design. It shall be a repository of sorts to help in
+            my efforts to detail an rich and compelling universe where a wide
+            swathe of narratives may flourish.
+          </Wiki.P>
+        </Wiki.Section>
 
-          <h2 className="my-6 text-2xl font-bold">Game Design Demos</h2>
-          <p className="my-2">
-            There will also be{" "}
-            <Link href={"/game-demos"} className="text-sky-600">
-              game demos
-            </Link>{" "}
-            here to help flesh out various ideas I have with trying to create
-            various graphics and UI/UX tools, especially with regards to games
-            utilizing the power of the browser. I think with the advent of
-            technologies like WebGPU and Progressive Web Apps, there will be a
-            renaissance of easy-to-share, access, and play web-based games that
-            don&apos;t compromise on performance or fidelity. And as such, the
-            content here will be oriented towards such technologies.
-          </p>
+        <Wiki.Section>
+          <Wiki.SubH mainPage={"/game-demos"}>Game Demos</Wiki.SubH>
+          <Wiki.P>
+            Here you&apos;ll find game demos to help flesh out ideas I&apos;ve
+            come up with regarding various graphics and UI/UX tools, especially
+            concerned with utilizing the power of the browser. I think with the
+            advent of technologies like WebGPU and Progressive Web Apps, there
+            will be a renaissance of easy-to-share, access, and play web-based
+            games that don&apos;t compromise on performance or fidelity. And as
+            such, the content here will be oriented towards such technologies.
+          </Wiki.P>
+        </Wiki.Section>
 
-          <h2 className="my-6 text-2xl font-bold">
-            Frequently Asked Questions
-          </h2>
-          <ul className="my-6">
-            <li className="my-6">
-              <h3 className="my-2 text-xl">
-                <i>What does &quot;Alareti&quot; even mean?</i>
-              </h3>
-              <p>
-                <strong>Towards virtue</strong>. It&apos;s a combination of a
-                couple of different words from different languages. The first is
-                the Spanish word &quot;a,&quot; or &quot;al,&quot; which means
-                &quot;to&quot; or &quot;towards&quot;. The second word is the
-                Greek word &quot;arete&quot; which means &quot;virtue&quot; or
-                &quot;excellence.&quot; When you put them together you get
-                &quot;Alarete,&quot; but I wanted to ensure the word would be
-                pronounced as al-uh-reh-tay, or something similar, as opposed to
-                al-uh-reet. So I changed the last letter from an &apos;e&apos;
-                to an &apos;i&apos; to force the pronunciation to be
-                al-uh-reh-tee. In essence, it&apos;s a made-up word meaning
-                &quot;towards virtue,&quot; which I felt would serve well as
-                both a name and a goal of this website.
-              </p>
-            </li>
-            <li className="my-6">
-              <h3 className="my-2 text-xl">
-                <i>Who are you?</i>
-              </h3>
-              <p>
-                My name is <strong>Davin</strong>. I&apos;m an electrical
-                engineer that tends to dabble in things that interests me. This
-                dabbling spirit manifests itself in a variety of ways, but to
-                list a few, it tends to oscillate around music, video games,
-                world-building, sports, programming, electronics, math, and
-                books. If you wish to contact me, davin.alareti@gmail.com is my
-                email address.
-              </p>
-            </li>
-          </ul>
-        </article>
-      </div>
-    </>
+        <Wiki.Section>
+          <Wiki.SubH>Frequently Asked Questions</Wiki.SubH>
+
+          <Wiki.Section>
+            <Wiki.SubH>
+              <i>What does &quot;Alareti&quot; mean?</i>
+            </Wiki.SubH>
+            <Wiki.P>
+              It means <strong>towards virtue</strong>. It&apos;s a combination
+              of a couple of different words from different languages. The first
+              is the Spanish word &quot;a,&quot; or &quot;al,&quot; which means
+              &quot;to&quot; or &quot;towards&quot;. The second word is the
+              Greek word &quot;arete&quot; which means &quot;virtue&quot; or
+              &quot;excellence.&quot; When you put them together you get
+              &quot;Alarete,&quot; but I wanted to ensure the word would be
+              pronounced as al-uh-reh-tay, or something similar, as opposed to
+              al-uh-reet. So I changed the last letter from an &apos;e&apos; to
+              an &apos;i&apos; to force the pronunciation to be al-uh-reh-tee.
+              In essence, it&apos;s a made-up word meaning &quot;towards
+              virtue,&quot; which I felt would serve well as both a name and a
+              goal of this website.
+            </Wiki.P>
+          </Wiki.Section>
+
+          <Wiki.Section>
+            <Wiki.SubH>
+              <i>Who are you?</i>
+            </Wiki.SubH>
+            <Wiki.P>
+              My name is <strong>Davin</strong>. I&apos;m an electrical engineer
+              that tends to dabble in things that interests me. This dabbling
+              spirit manifests itself in a variety of ways, but to list a few,
+              it tends to oscillate around music, video games, world-building,
+              sports, programming, electronics, math, and books. If you wish to
+              contact me, davin.alareti@gmail.com is my email address.
+            </Wiki.P>
+          </Wiki.Section>
+        </Wiki.Section>
+      </Wiki.Article>
+    </div>
   );
 }
