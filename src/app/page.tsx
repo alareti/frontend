@@ -28,9 +28,9 @@ export default function Index() {
             <i>Astralys</i>
           </Wiki.SubH>
           <Wiki.P>
-            The pursuit found here is the detailing of a &quot;
-            <Wiki.A href={"/astralys/frame-universe"}>frame universe</Wiki.A>
-            &quot; entitled <i>Astralys</i>. It is an exercise in
+            The pursuit found here is the detailing of a{" "}
+            <Wiki.A href={"/astralys/frame-universe"}>frame universe</Wiki.A>{" "}
+            set in the eponymous galaxy of Astralys. It is an exercise in
             world-building, using AI such as ChatGPT to help with various
             aspects of the design. It shall be a repository of sorts to help in
             my efforts to detail an rich and compelling universe where a wide
@@ -56,7 +56,7 @@ export default function Index() {
 
           <Wiki.Section>
             <Wiki.SubH>
-              <i>What does &quot;Alareti&quot; mean?</i>
+              <em>What does &quot;Alareti&quot; mean?</em>
             </Wiki.SubH>
             <Wiki.P>
               It means <strong>towards virtue</strong>. It&apos;s a combination
@@ -77,7 +77,7 @@ export default function Index() {
 
           <Wiki.Section>
             <Wiki.SubH>
-              <i>Who are you?</i>
+              <em>Who are you?</em>
             </Wiki.SubH>
             <Wiki.P>
               My name is <strong>Davin</strong>. I&apos;m an electrical engineer
@@ -88,13 +88,10 @@ export default function Index() {
               me at my email address below if you&apos;d like to reach out to
               me.
             </Wiki.P>
-            <address className="text-sm font-semibold italic text-neutral-600">
-              <a
-                href="mailto:davin.alareti@gmail.com"
-                className="transition-colors duration-200 hover:text-neutral-800"
-              >
+            <address className="text-sm font-semibold italic">
+              <Wiki.A href="mailto:davin.alareti@gmail.com">
                 davin.alareti@gmail.com
-              </a>
+              </Wiki.A>
             </address>
           </Wiki.Section>
         </Wiki.Section>

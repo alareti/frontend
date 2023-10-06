@@ -34,7 +34,7 @@ export function H({
   );
 
   const subtext = subtitle ? (
-    <p className="my-2 text-neutral-400">{subtitle}</p>
+    <p className="my-2 text-neutral-500">{subtitle}</p>
   ) : (
     <></>
   );
@@ -60,10 +60,8 @@ export function SubH({
   const nestedLevel = useContext(NestedLevelContext);
 
   const mainPageSubtext = mainPage ? (
-    <p className="ml-8 text-neutral-400">
-      <i>
-        Main Page: <A href={mainPage}>{children}</A>
-      </i>
+    <p className="ml-8 italic text-neutral-500">
+      Main Page: <A href={mainPage}>{children}</A>
     </p>
   ) : (
     <></>
@@ -136,7 +134,10 @@ export function P({ children }: { children: ReactNode }) {
 
 export function A({ children, href }: { children: ReactNode; href: Url }) {
   return (
-    <Link href={href} className="text-sky-600">
+    <Link
+      href={href}
+      className="rounded text-blue-600 transition-colors duration-200 hover:text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+    >
       {children}
     </Link>
   );
