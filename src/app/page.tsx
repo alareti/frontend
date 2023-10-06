@@ -11,7 +11,7 @@ export default function Index() {
         </Wiki.H>
         <Wiki.Section>
           <Wiki.P>
-            Welcome! This space serves as the archive for various experimental
+            Welcome! This space serves as an archive for various experimental
             projects and half-baked ideas of mine. While it may not currently
             win accolades for beauty, I hope that with time and nurturing it
             will blossom into an inviting garden of sorts, captivating to those
@@ -28,12 +28,12 @@ export default function Index() {
             <i>Astralys</i>
           </Wiki.SubH>
           <Wiki.P>
-            The pursuit found here is the detailing of a &quot;
-            <Wiki.A href={"/astralys/frame-universe"}>frame universe</Wiki.A>
-            &quot; entitled <i>Astralys</i>. It is an exercise in
+            The pursuit found here is the detailing of a{" "}
+            <Wiki.A href={"/astralys/frame-universe"}>frame universe</Wiki.A>{" "}
+            set in the eponymous galaxy of Astralys. It is an exercise in
             world-building, using AI such as ChatGPT to help with various
             aspects of the design. It shall be a repository of sorts to help in
-            my efforts to detail an rich and compelling universe where a wide
+            my efforts to detail a rich and compelling universe where a wide
             swathe of narratives may flourish.
           </Wiki.P>
         </Wiki.Section>
@@ -56,7 +56,7 @@ export default function Index() {
 
           <Wiki.Section>
             <Wiki.SubH>
-              <i>What does &quot;Alareti&quot; mean?</i>
+              <em>What does &quot;Alareti&quot; mean?</em>
             </Wiki.SubH>
             <Wiki.P>
               It means <strong>towards virtue</strong>. It&apos;s a combination
@@ -77,16 +77,22 @@ export default function Index() {
 
           <Wiki.Section>
             <Wiki.SubH>
-              <i>Who are you?</i>
+              <em>Who are you?</em>
             </Wiki.SubH>
             <Wiki.P>
               My name is <strong>Davin</strong>. I&apos;m an electrical engineer
-              that tends to dabble in things that interests me. This dabbling
+              that tends to dabble in things that interest me. This dabbling
               spirit manifests itself in a variety of ways, but to list a few,
               it tends to oscillate around music, video games, world-building,
-              sports, programming, electronics, math, and books. If you wish to
-              contact me, davin.alareti@gmail.com is my email address.
+              sports, programming, electronics, math, and books. You can contact
+              me at my email address below if you&apos;d like to reach out to
+              me.
             </Wiki.P>
+            <address className="text-sm font-semibold italic">
+              <Wiki.A href="mailto:davin.alareti@gmail.com">
+                davin.alareti@gmail.com
+              </Wiki.A>
+            </address>
           </Wiki.Section>
         </Wiki.Section>
       </Wiki.Article>
