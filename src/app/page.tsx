@@ -11,7 +11,7 @@ export default function Index() {
         </Wiki.H>
         <Wiki.Section>
           <Wiki.P>
-            Welcome! This space serves as the archive for various experimental
+            Welcome! This space serves as an archive for various experimental
             projects and half-baked ideas of mine. While it may not currently
             win accolades for beauty, I hope that with time and nurturing it
             will blossom into an inviting garden of sorts, captivating to those
@@ -33,7 +33,7 @@ export default function Index() {
             set in the eponymous galaxy of Astralys. It is an exercise in
             world-building, using AI such as ChatGPT to help with various
             aspects of the design. It shall be a repository of sorts to help in
-            my efforts to detail an rich and compelling universe where a wide
+            my efforts to detail a rich and compelling universe where a wide
             swathe of narratives may flourish.
           </Wiki.P>
         </Wiki.Section>
@@ -81,7 +81,7 @@ export default function Index() {
             </Wiki.SubH>
             <Wiki.P>
               My name is <strong>Davin</strong>. I&apos;m an electrical engineer
-              that tends to dabble in things that interests me. This dabbling
+              that tends to dabble in things that interest me. This dabbling
               spirit manifests itself in a variety of ways, but to list a few,
               it tends to oscillate around music, video games, world-building,
               sports, programming, electronics, math, and books. You can contact
