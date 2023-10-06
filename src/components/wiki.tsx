@@ -1,8 +1,19 @@
 import Link from "next/link";
-import { ReactNode, createContext, useContext } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 import { Url } from "next/dist/shared/lib/router/router";
+import { slugFromChildren } from "../utils/reactChildren";
 
 const NestedLevelContext = createContext(0);
+export function Main({ children }: { children: ReactNode }) {
+  return <main>{children}</main>;
+}
+
 export function Article({ children }: { children: ReactNode }) {
   return (
     <NestedLevelContext.Provider value={0}>
@@ -58,6 +69,7 @@ export function SubH({
   mainPage?: Url;
 }) {
   const nestedLevel = useContext(NestedLevelContext);
+  const slug = slugFromChildren(children);
 
   const mainPageSubtext = mainPage ? (
     <p className="ml-8 italic text-neutral-500">
@@ -70,7 +82,7 @@ export function SubH({
   switch (nestedLevel) {
     case 1: {
       return (
-        <header className="mb-4 mt-6">
+        <header id={slug} className="mb-4 mt-6">
           <h2 className="text-2xl font-bold">{children}</h2>
           {mainPageSubtext}
         </header>
@@ -78,7 +90,7 @@ export function SubH({
     }
     case 2: {
       return (
-        <header className="mb-2 mt-4">
+        <header id={slug} className="mb-2 mt-4">
           <h3 className="text-xl font-bold">{children}</h3>
           {mainPageSubtext}
         </header>
@@ -86,7 +98,7 @@ export function SubH({
     }
     case 3: {
       return (
-        <header className="mb-1 mt-2">
+        <header id={slug} className="mb-1 mt-2">
           <h4 className="text-lg font-bold">{children}</h4>
           {mainPageSubtext}
         </header>
@@ -94,7 +106,7 @@ export function SubH({
     }
     case 4: {
       return (
-        <header className="mb-0.5 mt-1">
+        <header id={slug} className="mb-0.5 mt-1">
           <h5 className="text-lg font-semibold">{children}</h5>
           {mainPageSubtext}
         </header>
@@ -136,7 +148,7 @@ export function A({ children, href }: { children: ReactNode; href: Url }) {
   return (
     <Link
       href={href}
-      className="rounded text-blue-600 transition-colors duration-200 hover:text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+      className="rounded text-blue-600 transition-colors duration-200 hover:text-blue-800 focus:outline-none focus:ring focus:ring-blue-300"
     >
       {children}
     </Link>
