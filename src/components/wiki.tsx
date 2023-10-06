@@ -42,11 +42,11 @@ export function H({
   const hr = subtitle ? <hr className="w-20" /> : <hr className="my-2 w-20" />;
 
   return (
-    <hgroup className="my-4">
+    <header className="my-4">
       {headerText}
       {subtext}
       {hr}
-    </hgroup>
+    </header>
   );
 }
 
@@ -72,34 +72,34 @@ export function SubH({
   switch (nestedLevel) {
     case 1: {
       return (
-        <hgroup className="mb-4 mt-6">
+        <header className="mb-4 mt-6">
           <h2 className="text-2xl font-bold">{children}</h2>
           {mainPageSubtext}
-        </hgroup>
+        </header>
       );
     }
     case 2: {
       return (
-        <hgroup className="mb-2 mt-4">
+        <header className="mb-2 mt-4">
           <h3 className="text-xl font-bold">{children}</h3>
           {mainPageSubtext}
-        </hgroup>
+        </header>
       );
     }
     case 3: {
       return (
-        <hgroup className="mb-1 mt-2">
+        <header className="mb-1 mt-2">
           <h4 className="text-lg font-bold">{children}</h4>
           {mainPageSubtext}
-        </hgroup>
+        </header>
       );
     }
     case 4: {
       return (
-        <hgroup className="mb-0.5 mt-1">
+        <header className="mb-0.5 mt-1">
           <h5 className="text-lg font-semibold">{children}</h5>
           {mainPageSubtext}
-        </hgroup>
+        </header>
       );
     }
     default: {

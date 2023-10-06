@@ -84,9 +84,18 @@ export default function Index() {
               that tends to dabble in things that interests me. This dabbling
               spirit manifests itself in a variety of ways, but to list a few,
               it tends to oscillate around music, video games, world-building,
-              sports, programming, electronics, math, and books. If you wish to
-              contact me, davin.alareti@gmail.com is my email address.
+              sports, programming, electronics, math, and books. You can contact
+              me at my email address below if you&apos;d like to reach out to
+              me.
             </Wiki.P>
+            <address className="text-sm font-semibold italic text-neutral-600">
+              <a
+                href="mailto:davin.alareti@gmail.com"
+                className="transition-colors duration-200 hover:text-neutral-800"
+              >
+                davin.alareti@gmail.com
+              </a>
+            </address>
           </Wiki.Section>
         </Wiki.Section>
       </Wiki.Article>
