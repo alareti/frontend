@@ -47,12 +47,17 @@ function isReactPortal(node: ReactNode): node is ReactPortal {
   return isValidElement(node) && (node as ReactPortal)?.children !== undefined;
 }
 
-function isReactElementWithChildren(
+type WithChildren<P = unknown> = P & { children: ReactNode };
+export function isReactElementWithChildren(
   node: ReactNode,
-): node is ReactElement<PropsWithChildren> {
-  return isValidElement<PropsWithChildren>(node);
+): node is ReactElement<WithChildren> {
+  return (
+    isValidElement<PropsWithChildren>(node) && node.props.children !== undefined
+  );
 }
 
-function isReactNodeIterator(node: ReactNode): node is Iterable<ReactNode> {
+export function isReactNodeIterator(
+  node: ReactNode,
+): node is Iterable<ReactNode> {
   return Symbol.iterator in Object(node);
 }
