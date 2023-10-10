@@ -10,46 +10,40 @@ import {
 } from "@/src/utils/reactChildren";
 
 function Root({ children }: { children?: ReactNode }) {
-  console.log(treeFromNode(children));
+  const section = { id: "root", children: [] };
+  sectionsFromNode(children, section);
+  console.log(section);
 
   return <>{children}</>;
 }
 
-type NestedTree<T> = null | T | NestedTree<T>[];
-function treeFromNode(node: ReactNode): NestedTree<string> {
-  if (!node) return null;
-  if (typeof node === "string") return null;
-  if (typeof node === "number") return null;
-  if (typeof node === "boolean") return null;
+// type NestedTree<T> = null | T | NestedTree<T>[];
+interface Section {
+  id: string;
+  children: Section[];
+}
+
+function sectionsFromNode(node: ReactNode, section: Section): void {
+  if (!node) return;
+  if (typeof node === "string") return;
+  if (typeof node === "number") return;
+  if (typeof node === "boolean") return;
 
   if (isReactNodeIterator(node)) {
     const nodeArr = Array.from(node);
-    const treeArr = nodeArr.map((node) => {
-      const childTree = treeFromNode(node);
-      return childTree;
+
+    nodeArr.forEach((node) => {
+      if (isComponent(node, Node) && !isReactElementWithChildren(node)) {
+      } else if (isComponent(node, Node) && isReactElementWithChildren(node)) {
+      } else if (isReactElementWithChildren(node)) {
+      }
     });
-    return treeArr;
   }
 
-  if (!isComponent(node, Node)) {
-    if (isReactElementWithChildren(node)) {
-      const childTree = treeFromNode(node.props.children);
-      return childTree;
-    } else {
-      return null;
-    }
+  if (isComponent(node, Node) && !isReactElementWithChildren(node)) {
   }
 
-  if (isComponent(node, Node)) {
-    if (isReactElementWithChildren(node)) {
-      const childTree = treeFromNode(node.props.children);
-      return [node.props.id, childTree];
-    } else {
-      return node.props.id;
-    }
-  }
-
-  return null;
+  return;
 }
 
 function isComponent<P>(
@@ -66,10 +60,10 @@ function Node({ children, id }: { children?: ReactNode; id: string }) {
 export default function Index() {
   return (
     <Root>
-      <Node id="1"></Node>
+      <Node id="0"></Node>
       <div>
+        <Node id="1"></Node>
         <Node id="2"></Node>
-        <Node id="3"></Node>
       </div>
     </Root>
   );
