@@ -10,17 +10,25 @@ import {
 } from "@/src/utils/reactChildren";
 
 function Root({ children }: { children?: ReactNode }) {
-  const section = { id: "root", children: [] };
-  sectionsFromNode(children, section);
-  console.log(section);
+  console.log(JSON.stringify(sectionsFromRoot(children), null, "  "));
 
-  return <>{children}</>;
+  return (
+    <>
+      <h1>Root</h1>
+      {children}
+    </>
+  );
 }
 
-// type NestedTree<T> = null | T | NestedTree<T>[];
 interface Section {
   id: string;
   children: Section[];
+}
+
+function sectionsFromRoot(children: ReactNode): Section {
+  const section = { id: "root", children: [] };
+  sectionsFromNode(children, section);
+  return section;
 }
 
 function sectionsFromNode(node: ReactNode, section: Section): void {
@@ -29,20 +37,26 @@ function sectionsFromNode(node: ReactNode, section: Section): void {
   if (typeof node === "number") return;
   if (typeof node === "boolean") return;
 
+  const handleSingleNode = (node: ReactNode, section: Section) => {
+    if (isComponent(node, Node) && !isReactElementWithChildren(node)) {
+      section.children.push({ id: node.props.id, children: [] });
+    } else if (isComponent(node, Node) && isReactElementWithChildren(node)) {
+      const childSection = { id: node.props.id, children: [] };
+      section.children.push(childSection);
+      sectionsFromNode(node.props.children, childSection);
+    } else if (isReactElementWithChildren(node)) {
+      sectionsFromNode(node.props.children, section);
+    }
+  };
+
   if (isReactNodeIterator(node)) {
     const nodeArr = Array.from(node);
-
     nodeArr.forEach((node) => {
-      if (isComponent(node, Node) && !isReactElementWithChildren(node)) {
-      } else if (isComponent(node, Node) && isReactElementWithChildren(node)) {
-      } else if (isReactElementWithChildren(node)) {
-      }
+      handleSingleNode(node, section);
     });
   }
 
-  if (isComponent(node, Node) && !isReactElementWithChildren(node)) {
-  }
-
+  handleSingleNode(node, section);
   return;
 }
 
@@ -54,17 +68,30 @@ function isComponent<P>(
 }
 
 function Node({ children, id }: { children?: ReactNode; id: string }) {
-  return <>{children}</>;
+  return (
+    <>
+      <h2 id={id}>{id}</h2>
+      {children}
+    </>
+  );
 }
 
 export default function Index() {
   return (
     <Root>
-      <Node id="0"></Node>
+      <Node id="0">
+        <Node id="0-0"></Node>
+      </Node>
       <div>
+        <hr />
         <Node id="1"></Node>
-        <Node id="2"></Node>
+        <Node id="2">
+          <div>
+            <Node id="2-0"></Node>
+          </div>
+        </Node>
       </div>
+      <div className="h-screen w-screen"></div>
     </Root>
   );
 }
