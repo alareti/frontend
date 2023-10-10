@@ -10,9 +10,26 @@ import { Url } from "next/dist/shared/lib/router/router";
 import { slugFromChildren } from "../utils/reactChildren";
 
 const NestedLevelContext = createContext(0);
-export function Main({ children }: { children: ReactNode }) {
-  return <main>{children}</main>;
+export function Main({
+  children,
+  title,
+  subtitle,
+}: {
+  children: ReactNode;
+  title: string;
+  subtitle?: string;
+}) {
+  return (
+    <main className="flex justify-center">
+      <Article>
+        <H subtitle={subtitle}>{title}</H>
+        {children}
+      </Article>
+    </main>
+  );
 }
+
+function sectionsFromMain() {}
 
 function ContentsNav() {}
 
