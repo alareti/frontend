@@ -14,6 +14,8 @@ export function Main({ children }: { children: ReactNode }) {
   return <main>{children}</main>;
 }
 
+function ContentsNav() {}
+
 export function Article({ children }: { children: ReactNode }) {
   return (
     <NestedLevelContext.Provider value={0}>
