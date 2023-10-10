@@ -4,6 +4,7 @@ import {
   PropsWithChildren,
   ReactElement,
   ReactPortal,
+  JSXElementConstructor,
 } from "react";
 
 var slugify = require("slugify");
@@ -60,4 +61,11 @@ export function isReactNodeIterator(
   node: ReactNode,
 ): node is Iterable<ReactNode> {
   return Symbol.iterator in Object(node);
+}
+
+export function isReactComponent<P>(
+  node: ReactNode,
+  comp: JSXElementConstructor<P>,
+): node is ReactElement<P> {
+  return isValidElement(node) && node.type === comp;
 }

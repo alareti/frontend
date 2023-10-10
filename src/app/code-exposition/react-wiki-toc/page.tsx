@@ -1,13 +1,14 @@
+import { ReactNode } from "react";
 import {
-  JSXElementConstructor,
-  ReactNode,
-  ReactElement,
-  isValidElement,
-} from "react";
-import {
+  isReactComponent,
   isReactElementWithChildren,
   isReactNodeIterator,
 } from "@/src/utils/reactChildren";
+
+interface Section {
+  id: string;
+  children: Section[];
+}
 
 function Root({ children }: { children?: ReactNode }) {
   console.log(JSON.stringify(sectionsFromRoot(children), null, "  "));
@@ -18,11 +19,6 @@ function Root({ children }: { children?: ReactNode }) {
       {children}
     </>
   );
-}
-
-interface Section {
-  id: string;
-  children: Section[];
 }
 
 function sectionsFromRoot(children: ReactNode): Section {
@@ -38,9 +34,12 @@ function sectionsFromNode(node: ReactNode, section: Section): void {
   if (typeof node === "boolean") return;
 
   const handleSingleNode = (node: ReactNode, section: Section) => {
-    if (isComponent(node, Node) && !isReactElementWithChildren(node)) {
+    if (isReactComponent(node, Node) && !isReactElementWithChildren(node)) {
       section.children.push({ id: node.props.id, children: [] });
-    } else if (isComponent(node, Node) && isReactElementWithChildren(node)) {
+    } else if (
+      isReactComponent(node, Node) &&
+      isReactElementWithChildren(node)
+    ) {
       const childSection = { id: node.props.id, children: [] };
       section.children.push(childSection);
       sectionsFromNode(node.props.children, childSection);
@@ -58,13 +57,6 @@ function sectionsFromNode(node: ReactNode, section: Section): void {
 
   handleSingleNode(node, section);
   return;
-}
-
-function isComponent<P>(
-  node: ReactNode,
-  comp: JSXElementConstructor<P>,
-): node is ReactElement<P> {
-  return isValidElement(node) && node.type === comp;
 }
 
 function Node({ children, id }: { children?: ReactNode; id: string }) {
