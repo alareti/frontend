@@ -4,25 +4,58 @@ import {
   isReactElementWithChildren,
   isReactNodeIterator,
 } from "@/src/utils/reactChildren";
+import Link from "next/link";
 
 interface Section {
   id: string;
   children: Section[];
 }
 
-function Root({ children }: { children?: ReactNode }) {
-  console.log(JSON.stringify(sectionsFromRoot(children), null, "  "));
+function Root({ children, id }: { children?: ReactNode; id: string }) {
+  const rootSection = sectionsFromRoot(children, id);
 
   return (
     <>
-      <h1>Root</h1>
+      <ContentsNav rootSection={rootSection}></ContentsNav>
+      <hr />
+      <h1 id={id}>{id}</h1>
       {children}
     </>
   );
 }
 
-function sectionsFromRoot(children: ReactNode): Section {
-  const section = { id: "root", children: [] };
+function ContentsNav({ rootSection }: { rootSection: Section }) {
+  const itemsFromSections = (sections: Section[]) => {
+    return sections.map((section) => {
+      const childrenListItems =
+        section.children.length > 0 ? (
+          <ul className="ml-4">{itemsFromSections(section.children)}</ul>
+        ) : (
+          <></>
+        );
+
+      return (
+        <li key={section.id}>
+          <Link href={"#" + section.id}>{section.id}</Link>
+          {childrenListItems}
+        </li>
+      );
+    });
+  };
+
+  return (
+    <nav>
+      <h2>
+        <Link href={"#" + rootSection.id}>{rootSection.id}</Link>
+      </h2>
+      <hr />
+      <ul>{itemsFromSections(rootSection.children)}</ul>
+    </nav>
+  );
+}
+
+function sectionsFromRoot(children: ReactNode, initId: string): Section {
+  const section = { id: initId, children: [] };
   sectionsFromNode(children, section);
   return section;
 }
@@ -70,12 +103,14 @@ function Node({ children, id }: { children?: ReactNode; id: string }) {
 
 export default function Index() {
   return (
-    <Root>
+    <Root id="root">
       <Node id="0">
-        <Node id="0-0"></Node>
+        <Node id="0-0">
+          <Node id="0-0-0"></Node>
+        </Node>
       </Node>
       <div>
-        <hr />
+        <p>hey</p>
         <Node id="1"></Node>
         <Node id="2">
           <div>
