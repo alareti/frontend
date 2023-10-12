@@ -1,63 +1,91 @@
 import Link from "next/link";
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-} from "react";
+import { ReactNode, createContext, useContext } from "react";
 import { Url } from "next/dist/shared/lib/router/router";
 import { slugFromChildren } from "../utils/reactChildren";
+
+interface LinkData {
+  href: Url;
+  name: JSX.Element;
+}
 
 const NestedLevelContext = createContext(0);
 export function Main({
   children,
   title,
   subtitle,
+  className,
 }: {
   children: ReactNode;
-  title: string;
-  subtitle?: string;
+  title: JSX.Element;
+  subtitle?: JSX.Element;
+  className?: string;
 }) {
   return (
-    <main className="flex justify-center">
-      <Article>
-        <H subtitle={subtitle}>{title}</H>
+    <main className={"flex justify-center " + className}>
+      <Article
+        className="mx-8 my-6 max-w-3xl"
+        title={title}
+        subtitle={subtitle}
+      >
         {children}
       </Article>
     </main>
   );
 }
 
-function sectionsFromMain() {}
-
-function ContentsNav() {}
-
-export function Article({ children }: { children: ReactNode }) {
+export function Article({
+  children,
+  className,
+  title,
+  subtitle,
+}: {
+  children: ReactNode;
+  className?: string;
+  title: JSX.Element;
+  subtitle?: JSX.Element;
+}) {
   return (
     <NestedLevelContext.Provider value={0}>
-      <article className="mx-8 my-6 max-w-3xl">{children}</article>
+      <article className={className}>
+        <H subtitle={subtitle}>{title}</H>
+        {children}
+      </article>
     </NestedLevelContext.Provider>
   );
 }
 
-export function Section({ children }: { children: ReactNode }) {
+export function Section({
+  children,
+  header,
+}: {
+  children: ReactNode;
+  header?: { heading: JSX.Element; mainPage?: LinkData };
+}) {
   const nestedLevel = useContext(NestedLevelContext);
   const newNestedLevel = nestedLevel + 1;
 
+  const subHeader = header ? (
+    <SubH mainPage={header.mainPage}>{header.heading}</SubH>
+  ) : (
+    <></>
+  );
+
   return (
     <NestedLevelContext.Provider value={newNestedLevel}>
-      <section>{children}</section>
+      <section>
+        {subHeader}
+        {children}
+      </section>
     </NestedLevelContext.Provider>
   );
 }
 
-export function H({
+function H({
   children,
   subtitle,
 }: {
   children: ReactNode;
-  subtitle?: string;
+  subtitle?: JSX.Element;
 }) {
   const headerText = (
     <h1 className="font-serif text-5xl font-medium">{children}</h1>
@@ -80,19 +108,19 @@ export function H({
   );
 }
 
-export function SubH({
+function SubH({
   children,
   mainPage,
 }: {
   children: ReactNode;
-  mainPage?: Url;
+  mainPage?: LinkData;
 }) {
   const nestedLevel = useContext(NestedLevelContext);
   const slug = slugFromChildren(children);
 
   const mainPageSubtext = mainPage ? (
     <p className="ml-8 italic text-neutral-500">
-      Main Page: <A href={mainPage}>{children}</A>
+      Main Page: <A href={mainPage.href}>{mainPage.name}</A>
     </p>
   ) : (
     <></>

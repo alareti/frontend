@@ -67,12 +67,7 @@ function sectionsFromNode(node: ReactNode, section: Section): void {
   if (typeof node === "boolean") return;
 
   const handleSingleNode = (node: ReactNode, section: Section) => {
-    if (isReactComponent(node, Node) && !isReactElementWithChildren(node)) {
-      section.children.push({ id: node.props.id, children: [] });
-    } else if (
-      isReactComponent(node, Node) &&
-      isReactElementWithChildren(node)
-    ) {
+    if (isReactComponent(node, Node)) {
       const childSection = { id: node.props.id, children: [] };
       section.children.push(childSection);
       sectionsFromNode(node.props.children, childSection);

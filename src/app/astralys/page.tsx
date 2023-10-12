@@ -5,12 +5,14 @@ import * as Wiki from "../../components/wiki";
 export default function Index() {
   return (
     <div className="flex justify-center bg-neutral-50">
-      <Wiki.Article>
-        <Wiki.H>
-          <i>Astralys</i>
-        </Wiki.H>
-        <Wiki.Section>
-          <Wiki.P>
+      <article>
+        <header>
+          <h1>
+            <i>Astralys</i>
+          </h1>
+        </header>
+        <section>
+          <p>
             The main focus here is to build out the lore of{" "}
             <strong>
               <i>Astralys</i>
@@ -34,8 +36,8 @@ export default function Index() {
             of Astralys, whether ancient or newly introduced, wrestles with
             their lineage and destiny in a galaxy brimming with enigma and
             tension.
-          </Wiki.P>
-          <Wiki.P>
+          </p>{" "}
+          <p>
             <i>Astralys</i> is being crafted as a{" "}
             <strong>frame universe</strong>. This approach to world-building
             seeks to meld the boundless possibilities of a{" "}
@@ -50,11 +52,12 @@ export default function Index() {
             structural logic bolsters creative freedom, and familiarity sparks
             intrigue. While the concept is ambitious, the potential rewards are
             boundless.
-          </Wiki.P>
-        </Wiki.Section>
-
-        <Wiki.Section>
-          <Wiki.SubH>Table of Contents</Wiki.SubH>
+          </p>
+        </section>
+        <section>
+          <header>
+            <h2>Table of Contents</h2>
+          </header>
           <ul>
             <li>
               <Wiki.A href={"/astralys/overviews"}>Overviews</Wiki.A>
@@ -92,8 +95,8 @@ export default function Index() {
               </Wiki.A>
             </li>
           </ul>
-        </Wiki.Section>
-      </Wiki.Article>
+        </section>
+      </article>
     </div>
   );
 }
