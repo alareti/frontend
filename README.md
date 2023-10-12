@@ -10,7 +10,7 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-```test123
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 If you wish to connect from an android mobile device, run `adb reverse tcp:3000 tcp:3000` from your PC's command line. Then open the above link from your mobile device.
