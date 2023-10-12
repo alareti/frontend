@@ -79,7 +79,7 @@ function sectionsFromNode(node: ReactNode, section: Section): void {
   if (isReactNodeIterator(node)) {
     const nodeArr = Array.from(node);
     nodeArr.forEach((node) => {
-      handleSingleNode(node, section);
+      sectionsFromNode(node, section);
     });
   }
 

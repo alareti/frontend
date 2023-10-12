@@ -4,18 +4,12 @@ import {
   PropsWithChildren,
   ReactElement,
   ReactPortal,
-  FunctionComponentElement,
-  FunctionComponentFactory,
-  DetailedReactHTMLElement,
-  ReactHTML,
   JSXElementConstructor,
-  PromiseLikeOfReactNode,
 } from "react";
-import { ReactHtmlTag, isReactHtml } from "./reactHtml";
 
 var slugify = require("slugify");
 
-export function slugFromChildren(node: ReactNode): string {
+export function slugFromNode(node: ReactNode): string {
   return slugify(stringFromNode(node), {
     replacement: "-", // replace spaces with replacement character, defaults to `-`
     remove: undefined, // remove characters that match regex, defaults to `undefined`
@@ -71,7 +65,7 @@ export function isReactNodeIterator(
 
 export function isReactComponent<P>(
   node: ReactNode,
-  comp: FunctionComponentFactory<P>,
-): node is FunctionComponentElement<P> {
+  comp: JSXElementConstructor<P>,
+): node is ReactElement<P> {
   return isValidElement(node) && node.type === comp;
 }

@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { ReactNode, createContext, useContext } from "react";
 import { Url } from "next/dist/shared/lib/router/router";
-import { slugFromChildren } from "../utils/reactChildren";
+import {
+  isReactComponent,
+  isReactElementWithChildren,
+  isReactNodeIterator,
+  slugFromNode,
+} from "../utils/reactChildren";
 
 interface LinkData {
   href: Url;
   name: JSX.Element;
+}
+
+interface Header {
+  heading: JSX.Element;
+  uriFragment: LinkData;
 }
 
 const NestedLevelContext = createContext(0);
@@ -20,6 +30,11 @@ export function Main({
   subtitle?: JSX.Element;
   className?: string;
 }) {
+  const initHeader = {
+    heading: title,
+  };
+  // const rootSection = sectionsFromRoot(children);
+
   return (
     <main className={"flex justify-center " + className}>
       <Article
@@ -33,7 +48,45 @@ export function Main({
   );
 }
 
-export function Article({
+interface SectionData {
+  data: Header;
+  children: SectionData[];
+}
+
+function sectionsFromRoot(
+  children: ReactNode,
+  initHeader: Header,
+): SectionData {
+  const section = { data: initHeader, children: [] };
+  sectionsFromNode(children, section);
+  return section;
+}
+
+function sectionsFromNode(node: ReactNode, sectionData: SectionData): void {
+  if (!node) return;
+  if (typeof node === "string") return;
+  if (typeof node === "number") return;
+  if (typeof node === "boolean") return;
+
+  if (isReactNodeIterator(node)) {
+    const nodeArr = Array.from(node);
+    nodeArr.forEach((node) => {
+      sectionsFromNode(node, sectionData);
+    });
+  }
+
+  // if (isReactComponent(node, Section) && node.props.header) {
+  //   const childSectionData = { data: node.props.header, children: [] };
+  //   sectionData.children.push(childSectionData);
+  //   sectionsFromNode(node.props.children, childSectionData);
+  // } else if (isReactElementWithChildren(node)) {
+  //   sectionsFromNode(node.props.children, sectionData);
+  // }
+
+  return;
+}
+
+function Article({
   children,
   className,
   title,
@@ -46,7 +99,7 @@ export function Article({
 }) {
   return (
     <NestedLevelContext.Provider value={0}>
-      <article className={className}>
+      <article className={"text-lg " + className}>
         <H subtitle={subtitle}>{title}</H>
         {children}
       </article>
@@ -59,7 +112,10 @@ export function Section({
   header,
 }: {
   children: ReactNode;
-  header?: { heading: JSX.Element; mainPage?: LinkData };
+  header?: {
+    heading: JSX.Element;
+    mainPage?: LinkData;
+  };
 }) {
   const nestedLevel = useContext(NestedLevelContext);
   const newNestedLevel = nestedLevel + 1;
@@ -116,7 +172,7 @@ function SubH({
   mainPage?: LinkData;
 }) {
   const nestedLevel = useContext(NestedLevelContext);
-  const slug = slugFromChildren(children);
+  const slug = slugFromNode(children);
 
   const mainPageSubtext = mainPage ? (
     <p className="ml-8 italic text-neutral-500">

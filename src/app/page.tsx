@@ -87,7 +87,7 @@ export default function Index() {
             sports, programming, electronics, math, and books. You can contact
             me at my email address below if you&apos;d like to reach out to me.
           </Wiki.P>
-          <address className="text-sm font-semibold italic">
+          <address className="text-base font-semibold italic">
             <Wiki.A href="mailto:davin.alareti@gmail.com">
               davin.alareti@gmail.com
             </Wiki.A>
