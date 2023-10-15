@@ -7,7 +7,6 @@ export default function Index() {
     <Wiki.Main
       title={<>Alareti</>}
       subtitle={<>The trove of a dabbler&apos;s fascinations</>}
-      className="bg-neutral-50"
     >
       <Wiki.Section>
         <Wiki.P>

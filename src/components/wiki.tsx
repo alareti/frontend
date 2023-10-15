@@ -8,17 +8,13 @@ import {
   slugFromNode,
 } from "../utils/reactChildren";
 
-interface LinkData {
-  href: Url;
-  name: JSX.Element;
-}
-
 interface Header {
   heading: JSX.Element;
-  uriFragment: LinkData;
+  slug: string;
 }
 
 const NestedLevelContext = createContext(0);
+const SluggifyContext = createContext(slugFromNode);
 export function Main({
   children,
   title,
@@ -30,21 +26,26 @@ export function Main({
   subtitle?: JSX.Element;
   className?: string;
 }) {
-  const initHeader = {
+  const initHeader: Header = {
     heading: title,
+    slug: "",
   };
-  // const rootSection = sectionsFromRoot(children);
+  // This slug business feels brittle
+  const rootSection = sectionsFromRoot(children, initHeader, slugFromNode);
+  console.log(rootSection);
 
   return (
-    <main className={"flex justify-center " + className}>
-      <Article
-        className="mx-8 my-6 max-w-3xl"
-        title={title}
-        subtitle={subtitle}
-      >
-        {children}
-      </Article>
-    </main>
+    <SluggifyContext.Provider value={slugFromNode}>
+      <main className={"flex justify-center " + className}>
+        <Article
+          className="mx-8 my-6 max-w-3xl"
+          title={title}
+          subtitle={subtitle}
+        >
+          {children}
+        </Article>
+      </main>
+    </SluggifyContext.Provider>
   );
 }
 
@@ -56,13 +57,18 @@ interface SectionData {
 function sectionsFromRoot(
   children: ReactNode,
   initHeader: Header,
+  sluggify: (node: ReactNode) => string,
 ): SectionData {
   const section = { data: initHeader, children: [] };
-  sectionsFromNode(children, section);
+  sectionsFromNode(children, section, sluggify);
   return section;
 }
 
-function sectionsFromNode(node: ReactNode, sectionData: SectionData): void {
+function sectionsFromNode(
+  node: ReactNode,
+  sectionData: SectionData,
+  sluggify: (node: ReactNode) => string,
+): void {
   if (!node) return;
   if (typeof node === "string") return;
   if (typeof node === "number") return;
@@ -71,17 +77,24 @@ function sectionsFromNode(node: ReactNode, sectionData: SectionData): void {
   if (isReactNodeIterator(node)) {
     const nodeArr = Array.from(node);
     nodeArr.forEach((node) => {
-      sectionsFromNode(node, sectionData);
+      sectionsFromNode(node, sectionData, sluggify);
     });
+    return;
   }
 
-  // if (isReactComponent(node, Section) && node.props.header) {
-  //   const childSectionData = { data: node.props.header, children: [] };
-  //   sectionData.children.push(childSectionData);
-  //   sectionsFromNode(node.props.children, childSectionData);
-  // } else if (isReactElementWithChildren(node)) {
-  //   sectionsFromNode(node.props.children, sectionData);
-  // }
+  if (isReactComponent(node, Section) && node.props.header) {
+    const heading = node.props.header.heading;
+    const slug = sluggify(heading);
+
+    const childSectionData = {
+      data: { heading: heading, slug: slug },
+      children: [],
+    };
+    sectionData.children.push(childSectionData);
+    sectionsFromNode(node.props.children, childSectionData, sluggify);
+  } else if (isReactElementWithChildren(node)) {
+    sectionsFromNode(node.props.children, sectionData, sluggify);
+  }
 
   return;
 }
@@ -107,6 +120,11 @@ function Article({
   );
 }
 
+interface LinkProps {
+  href: Url;
+  name: JSX.Element;
+}
+
 export function Section({
   children,
   header,
@@ -114,14 +132,19 @@ export function Section({
   children: ReactNode;
   header?: {
     heading: JSX.Element;
-    mainPage?: LinkData;
+    mainPage?: LinkProps;
   };
 }) {
   const nestedLevel = useContext(NestedLevelContext);
   const newNestedLevel = nestedLevel + 1;
 
+  const sluggify = useContext(SluggifyContext);
+  const slug = sluggify(header?.heading);
+
   const subHeader = header ? (
-    <SubH mainPage={header.mainPage}>{header.heading}</SubH>
+    <SubH mainPage={header.mainPage} slug={slug}>
+      {header.heading}
+    </SubH>
   ) : (
     <></>
   );
@@ -166,13 +189,15 @@ function H({
 
 function SubH({
   children,
+  slug,
   mainPage,
 }: {
   children: ReactNode;
-  mainPage?: LinkData;
+  slug: string;
+  mainPage?: LinkProps;
 }) {
   const nestedLevel = useContext(NestedLevelContext);
-  const slug = slugFromNode(children);
+  // const slug = slugFromNode(children);
 
   const mainPageSubtext = mainPage ? (
     <p className="ml-8 italic text-neutral-500">

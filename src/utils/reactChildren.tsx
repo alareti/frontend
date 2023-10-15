@@ -69,3 +69,29 @@ export function isReactComponent<P>(
 ): node is ReactElement<P> {
   return isValidElement(node) && node.type === comp;
 }
+
+// export function filterFromNode<P>(
+//   node: ReactNode,
+//   comp: JSXElementConstructor<P>,
+// ): ReactElement<P> | null {
+//   if (!node) return null;
+//   if (typeof node === "string") return null;
+//   if (typeof node === "number") return null;
+//   if (typeof node === "boolean") return null;
+
+//   if (isReactNodeIterator(node)) {
+//     const compNode = Array.from(node).filter(
+//       (node): node is ReactElement<P> => {
+//         console.log(isReactComponent(node, comp));
+//         return isReactComponent(node, comp);
+//       },
+//     );
+//     console.log(compNode.length);
+//     if (compNode.length > 0) return compNode[0];
+//     else return null;
+//   }
+
+//   if (isReactComponent(node, comp)) return node;
+
+//   return null;
+// }
