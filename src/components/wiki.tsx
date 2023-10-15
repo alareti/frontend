@@ -1,33 +1,170 @@
 import Link from "next/link";
 import { ReactNode, createContext, useContext } from "react";
 import { Url } from "next/dist/shared/lib/router/router";
+import {
+  isReactComponent,
+  isReactElementWithChildren,
+  isReactNodeIterator,
+  slugFromNode,
+} from "../utils/reactChildren";
+
+interface Header {
+  heading: JSX.Element;
+  slug: string;
+}
 
 const NestedLevelContext = createContext(0);
-export function Article({ children }: { children: ReactNode }) {
+const SluggifyContext = createContext(slugFromNode);
+export function Main({
+  children,
+  title,
+  subtitle,
+  className,
+}: {
+  children: ReactNode;
+  title: JSX.Element;
+  subtitle?: JSX.Element;
+  className?: string;
+}) {
+  const initHeader: Header = {
+    heading: title,
+    slug: "",
+  };
+  // This slug business feels brittle
+  const rootSection = sectionsFromRoot(children, initHeader, slugFromNode);
+  console.log(rootSection);
+
+  return (
+    <SluggifyContext.Provider value={slugFromNode}>
+      <main className={"flex justify-center " + className}>
+        <Article
+          className="mx-8 my-6 max-w-3xl"
+          title={title}
+          subtitle={subtitle}
+        >
+          {children}
+        </Article>
+      </main>
+    </SluggifyContext.Provider>
+  );
+}
+
+interface SectionData {
+  data: Header;
+  children: SectionData[];
+}
+
+function sectionsFromRoot(
+  children: ReactNode,
+  initHeader: Header,
+  sluggify: (node: ReactNode) => string,
+): SectionData {
+  const section = { data: initHeader, children: [] };
+  sectionsFromNode(children, section, sluggify);
+  return section;
+}
+
+function sectionsFromNode(
+  node: ReactNode,
+  sectionData: SectionData,
+  sluggify: (node: ReactNode) => string,
+): void {
+  if (!node) return;
+  if (typeof node === "string") return;
+  if (typeof node === "number") return;
+  if (typeof node === "boolean") return;
+
+  if (isReactNodeIterator(node)) {
+    const nodeArr = Array.from(node);
+    nodeArr.forEach((node) => {
+      sectionsFromNode(node, sectionData, sluggify);
+    });
+    return;
+  }
+
+  if (isReactComponent(node, Section) && node.props.header) {
+    const heading = node.props.header.heading;
+    const slug = sluggify(heading);
+
+    const childSectionData = {
+      data: { heading: heading, slug: slug },
+      children: [],
+    };
+    sectionData.children.push(childSectionData);
+    sectionsFromNode(node.props.children, childSectionData, sluggify);
+  } else if (isReactElementWithChildren(node)) {
+    sectionsFromNode(node.props.children, sectionData, sluggify);
+  }
+
+  return;
+}
+
+function Article({
+  children,
+  className,
+  title,
+  subtitle,
+}: {
+  children: ReactNode;
+  className?: string;
+  title: JSX.Element;
+  subtitle?: JSX.Element;
+}) {
   return (
     <NestedLevelContext.Provider value={0}>
-      <article className="mx-8 my-6 max-w-3xl">{children}</article>
+      <article className={"text-lg " + className}>
+        <H subtitle={subtitle}>{title}</H>
+        {children}
+      </article>
     </NestedLevelContext.Provider>
   );
 }
 
-export function Section({ children }: { children: ReactNode }) {
+interface LinkProps {
+  href: Url;
+  name: JSX.Element;
+}
+
+export function Section({
+  children,
+  header,
+}: {
+  children: ReactNode;
+  header?: {
+    heading: JSX.Element;
+    mainPage?: LinkProps;
+  };
+}) {
   const nestedLevel = useContext(NestedLevelContext);
   const newNestedLevel = nestedLevel + 1;
 
+  const sluggify = useContext(SluggifyContext);
+  const slug = sluggify(header?.heading);
+
+  const subHeader = header ? (
+    <SubH mainPage={header.mainPage} slug={slug}>
+      {header.heading}
+    </SubH>
+  ) : (
+    <></>
+  );
+
   return (
     <NestedLevelContext.Provider value={newNestedLevel}>
-      <section>{children}</section>
+      <section>
+        {subHeader}
+        {children}
+      </section>
     </NestedLevelContext.Provider>
   );
 }
 
-export function H({
+function H({
   children,
   subtitle,
 }: {
   children: ReactNode;
-  subtitle?: string;
+  subtitle?: JSX.Element;
 }) {
   const headerText = (
     <h1 className="font-serif text-5xl font-medium">{children}</h1>
@@ -50,18 +187,21 @@ export function H({
   );
 }
 
-export function SubH({
+function SubH({
   children,
+  slug,
   mainPage,
 }: {
   children: ReactNode;
-  mainPage?: Url;
+  slug: string;
+  mainPage?: LinkProps;
 }) {
   const nestedLevel = useContext(NestedLevelContext);
+  // const slug = slugFromNode(children);
 
   const mainPageSubtext = mainPage ? (
     <p className="ml-8 italic text-neutral-500">
-      Main Page: <A href={mainPage}>{children}</A>
+      Main Page: <A href={mainPage.href}>{mainPage.name}</A>
     </p>
   ) : (
     <></>
@@ -70,7 +210,7 @@ export function SubH({
   switch (nestedLevel) {
     case 1: {
       return (
-        <header className="mb-4 mt-6">
+        <header id={slug} className="mb-4 mt-6">
           <h2 className="text-2xl font-bold">{children}</h2>
           {mainPageSubtext}
         </header>
@@ -78,7 +218,7 @@ export function SubH({
     }
     case 2: {
       return (
-        <header className="mb-2 mt-4">
+        <header id={slug} className="mb-2 mt-4">
           <h3 className="text-xl font-bold">{children}</h3>
           {mainPageSubtext}
         </header>
@@ -86,7 +226,7 @@ export function SubH({
     }
     case 3: {
       return (
-        <header className="mb-1 mt-2">
+        <header id={slug} className="mb-1 mt-2">
           <h4 className="text-lg font-bold">{children}</h4>
           {mainPageSubtext}
         </header>
@@ -94,7 +234,7 @@ export function SubH({
     }
     case 4: {
       return (
-        <header className="mb-0.5 mt-1">
+        <header id={slug} className="mb-0.5 mt-1">
           <h5 className="text-lg font-semibold">{children}</h5>
           {mainPageSubtext}
         </header>
@@ -136,7 +276,7 @@ export function A({ children, href }: { children: ReactNode; href: Url }) {
   return (
     <Link
       href={href}
-      className="rounded text-blue-600 transition-colors duration-200 hover:text-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+      className="rounded text-blue-600 transition-colors duration-200 hover:text-blue-800 focus:outline-none focus:ring focus:ring-blue-300"
     >
       {children}
     </Link>
