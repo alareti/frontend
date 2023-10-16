@@ -1,6 +1,7 @@
 "use client";
 
 import * as Wiki from "@/src/components/wiki";
+import Link from "next/link";
 
 export default function Index() {
   return (
@@ -10,26 +11,39 @@ export default function Index() {
     >
       <Wiki.Section>
         <Wiki.P>
-          Agrami is an agrarian world located in the Midland region of the
-          Galactic Basin. The Astral Tide causes plants that grow here to
-          provide nutritional value in accordance to the need of the person who
-          harvests it. A plant picked by an emaciated person would thus be far
-          more nutritional than if picked by a satiated person. Humans and
-          dendrans are the primary species who inhabit Agrami - humans valuing
-          the land mainly for its commercial value, and the Dendrans valuing it
-          primarily as a place to live. Agrami serves as a breadbasket to the
-          cluster of star systems known as the Renout Formation, located on the
-          Terr Astral Artery.
+          Agrami is an agrarian world located in the{" "}
+          <Wiki.A href={"/astralys/galactic-basin-midland"}>Midland</Wiki.A>{" "}
+          region of the{" "}
+          <Wiki.A href={"/astralys/galactic-basin"}>Galactic Basin</Wiki.A>. The{" "}
+          <Wiki.A href={"/astralys/astral-tide"}>Astral Tide</Wiki.A> causes
+          plants that grow here to provide nutritional value in accordance to
+          the need of the person who harvests it. A plant picked by an emaciated
+          person would thus be far more nutritional than if picked by a satiated
+          person. <Wiki.A href={"/astralys/humans"}>Humans</Wiki.A> and{" "}
+          <Wiki.A href={"/astralys/dendrans"}>dendrans</Wiki.A> are the primary
+          species who inhabit Agrami - humans valuing the land mainly for its
+          commercial value, and the Dendrans valuing it primarily as a place to
+          live. Agrami serves as a breadbasket to the cluster of star systems
+          known as the{" "}
+          <Wiki.A href={"/astralys/renout-formation"}>Renout Formation</Wiki.A>,
+          located on the{" "}
+          <Wiki.A href={"/astralys/terr-astral-artery"}>
+            Terr Astral Artery
+          </Wiki.A>
+          .
         </Wiki.P>
         <Wiki.P>
-          There are no metropolises on Agrami. The largest urban area is Landau,
-          the capital city of Agrami, which holds approximately 500,000 people.
-          It primarily serves as the main transportation hub which connects the
-          rest of the galaxy to the farmlands dotting the landscape. There are
-          other major urban areas on Agrami, each serving as a node for
-          transportation, trade, and production, like Serin, Farein, and Tray.
-          However, their populations hover closer to 100,000, and they serve as
-          regional capitals as opposed to the planetary capital of Landau.
+          There are no metropolises on Agrami. The largest urban area is{" "}
+          <Wiki.A href={"/astralys/landau"}>Landau</Wiki.A>, the capital city of
+          Agrami, which holds approximately 500,000 people. It primarily serves
+          as the main transportation hub which connects the rest of the galaxy
+          to the farmlands dotting the landscape. There are other major urban
+          areas on Agrami, each serving as a node for transportation, trade, and
+          production, like <Wiki.A href={"/astralys/serin"}>Serin</Wiki.A>,{" "}
+          <Wiki.A href={"/astralys/farein"}>Farein</Wiki.A>, and{" "}
+          <Wiki.A href={"/astralys/traye"}>Traye</Wiki.A>. However, their
+          populations hover closer to 100,000, and they serve as regional
+          capitals as opposed to the planetary capital of Landau.
         </Wiki.P>
       </Wiki.Section>
       <Wiki.Section header={{ heading: <>Effects of the Astral Tide</> }}>
@@ -39,7 +53,7 @@ export default function Index() {
           harvests it. Not all areas of Agrami are conducive to agriculture, but
           there are large temperate zones where the ground is fertile and water
           is plentiful. This is where human civilization thrives - the rest of
-          the planet being left in its natural state.
+          the planet is left in its natural state.
         </Wiki.P>
         <Wiki.P>
           Many observations of this simple phenomena are worth mentioning. An
@@ -64,15 +78,34 @@ export default function Index() {
           banditry.
         </Wiki.P>
       </Wiki.Section>
-      <Wiki.Section header={{ heading: <>Dendrans</> }}>
-        <Wiki.P>
-          There is a sizable dendran population in Agrami as well. They prefer
-          to inhabit the untamed forested regions near the edges of the
-          temperate zones of Agrami. They are not nearly as populous as humans
-          on Agrami and hold themselves rather aloof from their neighbors,
-          preferring to keep to themselves as opposed to involving themselves
-          with their affairs.
-        </Wiki.P>
+      <Wiki.Section header={{ heading: <>Geography and Terrain</> }}>
+        <Wiki.P>The geography of Agrami is </Wiki.P>
+      </Wiki.Section>
+      <Wiki.Section header={{ heading: <>Major Species</> }}>
+        <Wiki.Section header={{ heading: <>Humans</> }}>
+          <Wiki.P>
+            Humans make up the majority of the population, centralized around
+            the fertile regions of Agrami.
+          </Wiki.P>
+        </Wiki.Section>
+        <Wiki.Section
+          header={{
+            heading: <>Dendrans</>,
+            mainPage: {
+              href: "/astralys/dendrans",
+              name: <>Dendrans</>,
+            },
+          }}
+        >
+          <Wiki.P>
+            There is a sizable dendran population in Agrami as well. They prefer
+            to inhabit the untamed forested regions near the edges of the
+            temperate zones of Agrami. They are not nearly as populous as humans
+            on Agrami and hold themselves rather aloof from their neighbors,
+            preferring to keep to themselves as opposed to involving themselves
+            with their affairs.
+          </Wiki.P>
+        </Wiki.Section>
       </Wiki.Section>
     </Wiki.Main>
   );
