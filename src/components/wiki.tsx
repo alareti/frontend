@@ -38,7 +38,7 @@ export function Main({
     <SluggifyContext.Provider value={slugFromNode}>
       <main className={"flex justify-center " + className}>
         <Article
-          className="mx-8 my-6 max-w-3xl"
+          className="mx-8 my-6 w-full max-w-3xl"
           title={title}
           subtitle={subtitle}
         >
