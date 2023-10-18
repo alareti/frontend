@@ -89,21 +89,21 @@ export default function Index() {
         <Wiki.P>
           Here we discuss the implications of Ironic Truth. Why do seemingly
           illogical statements resonate with us? Why does phrasing statements in
-          certain ways seems to feel more rhetorical than other methods of
-          phrasing? Why do certain well-known phrases feel so profound, so true?
-          We investigate the linguistic structure of these phrases with regards
-          to Boolean Irony, and we posit the existence of a standard ironic
-          format, such that a sort of &quot;Formal Irony&quot; can be
-          investigated in its own right, so that its intuitive nature can be
-          more naturally explored.
+          certain ways feel more rhetorical than other methods of phrasing? Why
+          do certain well-known phrases feel so profound and so true? We
+          investigate the linguistic structure of these phrases with regards to
+          Boolean Irony, and we posit the existence of a standard ironic format,
+          such that a sort of &quot;Formal Irony&quot; can be investigated in
+          its own right, so that its intuitive nature can be more naturally
+          explored.
         </Wiki.P>
       </Wiki.Section>
       <Wiki.Section
         header={{
-          heading: <>Memes as Ironic Expressions</>,
+          heading: <>Standard Ironic Expressions</>,
           mainPage: {
-            href: "/exploring-irony/memes-as-ironic-expressions",
-            name: <>Memes as Ironic Expressions</>,
+            href: "/exploring-irony/standard-ironic-expressions",
+            name: <>Standard Ironic Expressions</>,
           },
         }}
       >
@@ -245,7 +245,9 @@ export default function Index() {
           catalogued here, not to serve as logical conclusions, but to let us
           perceive the paradoxes inherent in declaring irony as something so
           foundational. This perhaps can act as an engine of inspiration,
-          helping to direct future efforts in exploring irony.
+          helping to direct future efforts in exploring irony, and it serves as
+          a fitting end to help fit our newfound insights into the broader scope
+          of the world.
         </Wiki.P>
       </Wiki.Section>
     </Wiki.Main>
