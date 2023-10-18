@@ -82,9 +82,9 @@ export default function Index() {
           >
             derided
           </Wiki.A>{" "}
-          by some of the most famous of philosophers. This series of articles
-          aims to rectify that by seriously considering the role irony serves in
-          our capacity to understand the world.
+          by some of the most famous of modern philosophers. This series of
+          articles aims to address this by seriously considering the role irony
+          serves in our capacity to understand the world.
         </Wiki.P>
       </Wiki.Section>
 
