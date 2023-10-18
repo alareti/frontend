@@ -252,16 +252,16 @@ export function P({ children }: { children: ReactNode }) {
   const my = (() => {
     switch (nestedLevel) {
       case 1: {
-        return "my-4";
+        return "mt-4 mb-4";
       }
       case 2: {
-        return "my-2";
+        return "mt-2 mb-4";
       }
       case 3: {
-        return "my-1";
+        return "mt-1 mb-4";
       }
       case 4: {
-        return "my-0.5";
+        return "mt-0.5 mb-4";
       }
       default: {
         return "";
