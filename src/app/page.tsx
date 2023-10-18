@@ -56,6 +56,38 @@ export default function Index() {
         </Wiki.P>
       </Wiki.Section>
 
+      <Wiki.Section
+        header={{
+          heading: <>Exploring Irony</>,
+          mainPage: { href: "/exploring-irony", name: <>Exploring Irony</> },
+        }}
+      >
+        <Wiki.P>
+          Here you&apos;ll find an exploration of irony and how it relates to
+          logic and human cognition. I believe irony, as a profound human
+          experience, is far too neglected as a subject of serious academic
+          scholarship, and has even been{" "}
+          <Wiki.A
+            href={
+              "https://en.wikipedia.org/wiki/Irony?useskin=vector#Irony_as_infinite,_absolute_negativity"
+            }
+          >
+            scorned
+          </Wiki.A>{" "}
+          and{" "}
+          <Wiki.A
+            href={
+              "https://en.wikipedia.org/wiki/Irony?useskin=vector#Opposition_between_perception_and_concept"
+            }
+          >
+            derided
+          </Wiki.A>{" "}
+          by some of the most famous of philosophers. This series of articles
+          aims to rectify that by seriously considering the role irony serves in
+          our capacity to understand the world.
+        </Wiki.P>
+      </Wiki.Section>
+
       <Wiki.Section header={{ heading: <>Frequently Asked Questions</> }}>
         <Wiki.Section
           header={{ heading: <em>What does &quot;Alareti&quot; mean?</em> }}
