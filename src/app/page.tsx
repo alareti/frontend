@@ -87,6 +87,20 @@ export default function Index() {
           serves in our capacity to understand the world.
         </Wiki.P>
       </Wiki.Section>
+      <Wiki.Section
+        header={{
+          heading: <>Exploring Human Rights</>,
+          mainPage: {
+            href: "/exploring-human-rights",
+            name: <>Exploring Human Rights</>,
+          },
+        }}
+      >
+        <Wiki.P>
+          Here you&apos;ll find an exploration of the foundations of human
+          rights.
+        </Wiki.P>
+      </Wiki.Section>
 
       <Wiki.Section header={{ heading: <>Frequently Asked Questions</> }}>
         <Wiki.Section
