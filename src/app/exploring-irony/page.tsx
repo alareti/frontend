@@ -42,16 +42,40 @@ export default function Index() {
         }}
       >
         <Wiki.P>
-          We must start somewhere, and this is as good a place as any to set us
-          off on our journey. We begin by exploring why, in formal logic, the{" "}
-          <i>If...Then...</i> expression (also called <i>IMPLIES</i>) does not
-          match our intuitive understanding of the <i>If...Then...</i> statement
-          found in natural language. Using truth tables we formulate an ironic
-          variant of an <i>If...Then...</i> expression and come to see it as the
-          inverse of the formal <i>If...Then...</i> statement. We speculate that
-          formal logic is the minimization, or subversion, of irony, as opposed
-          to an abstracted, or codified, formulation of the logic inherent in
-          natural language constructs.
+          We begin by exploring why, in formal logic, the <i>If...Then...</i>{" "}
+          expression (also called <i>IMPLIES</i>) does not match our intuitive
+          understanding of the <i>If...Then...</i> statement found in natural
+          language, using truth tables and control-flow theory. We speculate
+          that the inconsistencies found between natural language and formal
+          logic are caused by differing purposes - natural language is the
+          domain of rational decision-making, and formal logic is the domain of
+          rational truth-seeeking. This bifurcation of rationality is
+          troublesome, especially since decision-making is deeply intuitive, and
+          truth-seeking seems artificial. We end by positing there is some
+          missing link, since humans have a deep emotional attachment to the
+          idea of truth.
+        </Wiki.P>
+      </Wiki.Section>
+      <Wiki.Section
+        header={{
+          heading: (
+            <>
+              The Ironic <i>If...Then...</i> Statement
+            </>
+          ),
+          mainPage: {
+            href: "/exploring-irony/the-ironic-if-then-statement",
+            name: (
+              <>
+                The Ironic <i>If...Then...</i> Statement
+              </>
+            ),
+          },
+        }}
+      >
+        <Wiki.P>
+          In this article we explore the ironic <i>If...Then...</i> statement
+          and how it relates to the formal <i>If...Then...</i> statement.
         </Wiki.P>
       </Wiki.Section>
       <Wiki.Section
