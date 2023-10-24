@@ -24,6 +24,12 @@
     },
     "typeRoots": ["./node_modules/@webgpu/types", "./node_modules/@types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/exploring-irony/the-intuitive-if-then-statement/page.bak"
+  ],
   "exclude": ["node_modules"]
 }
