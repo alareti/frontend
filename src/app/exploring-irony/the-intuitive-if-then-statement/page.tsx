@@ -40,10 +40,9 @@ export default function Index() {
         <Wiki.P>
           If in reality I dropped the water bottle (<strong>P</strong> = True)
           and it actually hit the floor (<strong>Q</strong> = True) this feels
-          like the conditional would apply, right? I&apos;m not making an
-          intuitively False statement that if <strong>P</strong> then{" "}
-          <strong>Q</strong> evaluates to True in the condition that both{" "}
-          <strong>P</strong> and <strong>Q</strong> evaluate to True.
+          like the conditional would apply, right? I predicted that when I
+          dropped it, it would hit the floor, and that&apos;s exactly what
+          happened. We set <strong>Output</strong> to True.
         </Wiki.P>
         <Wiki.P>
           What if, in reality, I dropped the water bottle (<strong>P</strong> =
@@ -51,9 +50,10 @@ export default function Index() {
           False)? That it managed to land on a table and never hit the ground?
           We would be forced to conclude that the conditional does not apply.
           After all, we were positing that, when we released the water bottle,
-          somehow it would make it to the floor. But it didn&apos;t. So this
-          case, when <strong>P</strong> is True but <strong>Q</strong> is False,
-          would be False in our intuitive understanding of the conditional.
+          somehow it would make it to the floor. But it didn&apos;t. So in this
+          case, when <strong>P</strong> is True but <strong>Q</strong> is False,{" "}
+          <strong>Output</strong> would be False in our intuitive understanding
+          of the conditional.
         </Wiki.P>
         <Wiki.P>
           And what if I don&apos;t drop the water bottle at all? Let&apos;s say
@@ -74,21 +74,25 @@ export default function Index() {
           wrong? He was operating under the intuitive assumption that when
           someone suggests &quot;if <strong>P</strong> then <strong>Q</strong>
           &quot; that they will follow it as a procedure as opposed to simply
-          suggesting it as a hypothetical scenario. He was betting on the causal
-          properties of gravity that the conditional was actually discussing,
-          not on Alice&apos;s arbitrary decision to follow her own procedure
-          she&apos;d laid out.
+          suggesting it as a hypothetical scenario. He actually explicitly
+          stated this when he said, &quot;If you drop that water bottle{" "}
+          <em>and</em> it doesn&apos;t hit the ground.&quot; He was betting on
+          the causal properties of gravity, not on Alice&apos;s arbitrary choice
+          to follow her own procedure that she&apos;d laid out.
         </Wiki.P>
         <Wiki.P>
           As such, intuitively, we&apos;re forced to acknowledge that, if{" "}
           <strong>P</strong> is False, if the antecedent is not fulfilled, then
-          the intuitive if...then... statement is necessarily False. We organize
-          the logic of the past few paragraphs into a simple truth table here.
-          We shall call this the <em>literal</em> conditional.
+          in this case, the intuitive if...then... statement is necessarily
+          False. We organize the logic of the past few paragraphs into a simple
+          truth table here. We shall call this the <em>plain</em> conditional.
+          We call it plain, because Bob took Alice&apos;s bet at face value, or
+          &quot;plainly&quot; as opposed to seriously thinking through all of
+          the possible scenarios, or &quot;hypothetically.&quot;
         </Wiki.P>
         <table>
           <caption className="border border-neutral-700 p-2">
-            The Literal Conditional Truth Table
+            The Plain Conditional Truth Table
           </caption>
 
           <tr>
@@ -120,27 +124,25 @@ export default function Index() {
       </Wiki.Section>
       <Wiki.Section
         header={{
-          heading: <>The Procedural Nature of the Literal Conditional</>,
+          heading: <>The Procedural Nature of the Plain Conditional</>,
         }}
       >
         <Wiki.P>
-          Now, the literal conditional which we&apos;ve formulated is the
-          simplest formulation of the conditional which can be made because it
-          is <em>procedural</em> in nature. We intuitively reason through
+          Now, the plain conditional which we&apos;ve formulated is the simplest
+          formulation of the conditional which can be made because it makes
+          <em>procedural</em> assumptions. We intuitively reason through
           decision-trees and procedures - through straightforward recipes and
           instructions, not through ambiguous hypotheticals and scenarios. As
           such, when we encounter a conditional out in the wild, it is this{" "}
-          <em>literal</em> interpretation which serves us best. All it is merely
-          saying is that &quot;If and only if some antecedent is fulfilled will
-          some consequent follow.&quot;
+          <em>plain</em> interpretation which usually applies, since we tend to
+          think procedurally. All it is merely saying is that &quot;If and only
+          if some antecedent is fulfilled will some consequent follow.&quot;
         </Wiki.P>
         <Wiki.P>
-          However, recall that it is not the same as saying that the consequent
-          will never occur if the antecedent is False. That is because what we
-          are engaging in is not hypothetical-based reasoning but
-          procedural-based reasoning. To account for the possibility of some
-          consequent to occur of the antecedent is False, we have the concept of
-          the &quot;If...Then...Else...&quot; statement in procedural logic. For
+          However, this is not the only way to frame a procedural conditional.
+          To account for the possibility of some consequent to occur of the
+          antecedent is False, we have the concept of the
+          &quot;If...Then...Else...&quot; statement in procedural thought. For
           instance, to explicitly capture the consequent <strong>Q</strong>{" "}
           <em>not</em> happening when the antecedent <strong>P</strong> is
           False, we add the &quot;Else NOT Q&quot; clause to make &quot;if{" "}
@@ -188,16 +190,40 @@ export default function Index() {
           </tr>
         </table>
       </Wiki.Section>
-      <Wiki.Section header={{ heading: <>The Pedantic Conditional</> }}>
+      <Wiki.Section header={{ heading: <>The Procedural Conditional</> }}>
         <Wiki.P>
-          Now, there&apos;s also another way of interpreting the conditional in
-          natural language, and it is by reading the if...then... statement{" "}
-          <em>pedantically</em>, much like how Alice did in our first example.
-          You see, Alice is all about making Bob&apos;s life as ironic as
-          possible. A place where If False Then True is a perfectly valid
-          conditional to make.
+          So, the seemingly simple conditional of &quot;if I drop this water
+          bottle, then it will hit the ground&quot; already has a few ways of
+          interpreting it - the pedantic way which Alice suggested, the plain
+          way which Bob assumed, and this new interpreted way that seems also
+          could apply to the statement.
         </Wiki.P>
-        <Wiki.P>As such, she says to Bob, &quot;</Wiki.P>
+        <Wiki.P>
+          And there are many other ways to interpret the conditional as well. We
+          could think about it &quot;dogmatically,&quot;
+          &quot;skeptically,&quot; or even &quot;ironically&quot; if we so
+          choose. The point is that all of these different ways of interpreting
+          the conditional is <em>valid</em> and is{" "}
+          <em>determined by the context.</em>
+        </Wiki.P>
+        <Wiki.P>
+          Now, I claim that the procedural conditional is the most intuitive.
+          Why? Because it works spectacularly well for recipes or instructions
+          that involve <em>action</em> as opposed to <em>truth-evaluation.</em>{" "}
+          Humans live in a world where <em>actions need to be decided upon</em>{" "}
+          and our natural language constructs of conditionals are intrinsically
+          geared towards this decision-making paradigm. In fact, a much more
+          intuitive way of using the if...then... statement can be found in
+          computer programming as opposed to formal logic. It goes something
+          like this:
+        </Wiki.P>
+        <Wiki.P>IF Alice wins bet THEN give Alice $100.</Wiki.P>
+        <Wiki.P>
+          Here, we are no longer in the truth-evaluating paradigm. We&apos;re in
+          the decision-making paradigm, and the If...Then... acts as a{" "}
+          <em>control-flow</em> statement as opposed to a <em>hypothetical.</em>
+        </Wiki.P>
+        <Wiki.P>The interesting thing is that the way we evaluate</Wiki.P>
       </Wiki.Section>
     </Wiki.Main>
   );
